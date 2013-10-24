@@ -1,0 +1,11 @@
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\ConfigFileReader\bin\Debug\ConfigFileReader.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\ConfigFileReader\bin\Debug\ConfigFileReader.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\ConfigFileReader\bin\Debug\Journal Configuration.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\ConfigFileReader\bin\Debug\Settings.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\ConfigFileReader\bin\Debug\Yaml Reader.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\ConfigFileReader\bin\Debug\Journal Configuration.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\ConfigFileReader\bin\Debug\Settings.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\ConfigFileReader\bin\Debug\Yaml Reader.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\ConfigFileReader\obj\Debug\ConfigFileReader.csprojResolveAssemblyReference.cache
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\ConfigFileReader\obj\Debug\ConfigFileReader.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\ConfigFileReader\obj\Debug\ConfigFileReader.pdb

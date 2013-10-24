@@ -1,0 +1,8 @@
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\SaveToFile\bin\Debug\SaveToFile.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\SaveToFile\bin\Debug\SaveToFile.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\SaveToFile\bin\Debug\Convert Item To String.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\SaveToFile\bin\Debug\Journal Record.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\SaveToFile\bin\Debug\Convert Item To String.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\SaveToFile\bin\Debug\Journal Record.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\SaveToFile\obj\Debug\SaveToFile.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\SaveToFile\obj\Debug\SaveToFile.pdb

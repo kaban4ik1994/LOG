@@ -1,0 +1,7 @@
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\LOG\bin\Debug\LOG.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\LOG\bin\Debug\LOG.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\LOG\obj\Debug\Log Reader.csprojResolveAssemblyReference.cache
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\LOG\obj\Debug\LOG.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\LOG\obj\Debug\LOG.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\LOG\bin\Debug\Journal Record.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\LOG\bin\Debug\Journal Record.pdb

@@ -1,0 +1,5 @@
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Struct Log File\bin\Debug\Struct Log File.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Struct Log File\bin\Debug\Struct Log File.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Struct Log File\obj\Debug\Struct Log File.csprojResolveAssemblyReference.cache
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Struct Log File\obj\Debug\Struct Log File.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Struct Log File\obj\Debug\Struct Log File.pdb

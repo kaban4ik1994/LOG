@@ -1,0 +1,5 @@
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Command Line\bin\Debug\Command Line.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Command Line\bin\Debug\Command Line.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Command Line\obj\Debug\Command Line.csprojResolveAssemblyReference.cache
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Command Line\obj\Debug\Command Line.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Command Line\obj\Debug\Command Line.pdb

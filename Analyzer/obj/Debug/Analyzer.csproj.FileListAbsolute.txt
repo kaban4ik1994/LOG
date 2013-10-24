@@ -1,0 +1,18 @@
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Analyzer.exe.config
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Analyzer.exe
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Analyzer.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Command Line.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\File Analyzer.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\LOG.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Command Line.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\File Analyzer.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\LOG.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\obj\Debug\Analyzer.csprojResolveAssemblyReference.cache
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\obj\Debug\Analyzer.exe
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\obj\Debug\Analyzer.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Journal Record.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Journal Record.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Library Create Graph.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Library Create Graph.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Convert Item To String.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Convert Item To String.pdb

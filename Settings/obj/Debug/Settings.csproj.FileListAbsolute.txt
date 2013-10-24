@@ -1,0 +1,9 @@
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Settings\bin\Debug\Settings.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Settings\bin\Debug\Settings.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Settings\bin\Debug\Journal Configuration.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Settings\bin\Debug\Yaml Reader.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Settings\bin\Debug\Journal Configuration.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Settings\bin\Debug\Yaml Reader.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Settings\obj\Debug\Settings.csprojResolveAssemblyReference.cache
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Settings\obj\Debug\Settings.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Settings\obj\Debug\Settings.pdb

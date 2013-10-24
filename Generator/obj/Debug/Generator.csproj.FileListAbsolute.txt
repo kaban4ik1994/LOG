@@ -1,0 +1,24 @@
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\Generator.exe.config
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\Generator.exe
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\Generator.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\Command Line.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\File Generator.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\Command Line.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\File Generator.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\obj\Debug\Generator.csprojResolveAssemblyReference.cache
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\obj\Debug\Generator.exe
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\obj\Debug\Generator.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\Journal Record.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\Journal Record.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\Journal Configuration.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\Yaml Reader.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\Journal Configuration.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\Yaml Reader.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\SaveToFile.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\Convert Item To String.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\SaveToFile.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\Convert Item To String.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\ConfigFileReader.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\Settings.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\ConfigFileReader.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Generator\bin\Debug\Settings.pdb

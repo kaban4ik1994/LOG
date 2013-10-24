@@ -1,0 +1,5 @@
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Journal Configuration\bin\Debug\Journal Configuration.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Journal Configuration\bin\Debug\Journal Configuration.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Journal Configuration\obj\Debug\Journal Configuration.csprojResolveAssemblyReference.cache
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Journal Configuration\obj\Debug\Journal Configuration.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Journal Configuration\obj\Debug\Journal Configuration.pdb

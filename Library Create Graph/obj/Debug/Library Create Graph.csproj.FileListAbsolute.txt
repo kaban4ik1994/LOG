@@ -1,0 +1,5 @@
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Library Create Graph\bin\Debug\Library Create Graph.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Library Create Graph\bin\Debug\Library Create Graph.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Library Create Graph\obj\Debug\Library Create Graph.csprojResolveAssemblyReference.cache
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Library Create Graph\obj\Debug\Library Create Graph.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Library Create Graph\obj\Debug\Library Create Graph.pdb

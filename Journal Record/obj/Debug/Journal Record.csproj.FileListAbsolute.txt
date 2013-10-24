@@ -1,0 +1,5 @@
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Journal Record\bin\Debug\Journal Record.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Journal Record\bin\Debug\Journal Record.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Journal Record\obj\Debug\Journal Record.csprojResolveAssemblyReference.cache
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Journal Record\obj\Debug\Journal Record.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Journal Record\obj\Debug\Journal Record.pdb

@@ -1,0 +1,7 @@
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Yaml Reader\bin\Debug\Yaml Reader.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Yaml Reader\bin\Debug\Yaml Reader.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Yaml Reader\bin\Debug\Journal Configuration.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Yaml Reader\bin\Debug\Journal Configuration.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Yaml Reader\obj\Debug\Yaml Reader.csprojResolveAssemblyReference.cache
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Yaml Reader\obj\Debug\Yaml Reader.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Yaml Reader\obj\Debug\Yaml Reader.pdb
