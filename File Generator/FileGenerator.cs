@@ -9,7 +9,7 @@ namespace File_Generator
         private readonly Random _random = new Random(DateTime.Now.Millisecond);
         private string[] _protocol;
         private string[] _httpMethods;
-        private int[] _statusСodes;
+        private string[] _statusСodes;
         private string[] _fileExtension;
         private DateTime _startTime;
         private int _minIntervalInMilliseconds;
@@ -34,7 +34,7 @@ namespace File_Generator
             }
         }
 
-        public int[] StatusCodes
+        public string[] StatusCodes
         {
             set
             {

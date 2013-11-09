@@ -23,7 +23,7 @@ namespace Generator
                 FileExtension = new[] { ".exe", ".txt", ".pdf" },
                 Protocol = new[] { "http", "https" },
                 StartTime = DateTime.Now,
-                StatusCodes = new[] { 301, 302, 303, 403, 404 },
+                StatusCodes = new[] { "301", "302", "303", "403", "404" },
                 MinIntervalInMilliseconds = 1,
                 Parameters = configFileReader.Settings,
                 MaxIntervalInMilliseconds = 1000,

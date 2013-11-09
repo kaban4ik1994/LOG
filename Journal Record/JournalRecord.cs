@@ -13,7 +13,7 @@ namespace Journal_Record
         public string Protocol { get; set; }
         public string FileName { get; set; }
         public string FileExtension { get; set; }
-        public int StatusCode { get; set; }
+        public string StatusCode { get; set; }
         public int NumberOfBytes { get; set; }
 
 

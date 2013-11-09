@@ -31,7 +31,7 @@ namespace LOG
         {
             var regex =
                 new Regex(
-                    @"(?<IpByte1>\d{1,3})\.(?<IpByte2>\d{1,3})\.(?<IpByte3>\d{1,3})\.(?<IpByte4>\d{1,3})\ \-\ \- \[(?<Day>\d{1,2})\/(?<Month>\d{1,2})\/(?<Year>\d{4})\:(?<Hour>\d{1,2})\:(?<Minutes>\d{1,2})\:(?<Seconds>\d{1,2})\]\ (?<Method>\w+)\ (?<Protocol>\w+)\:\/\/(?<filename>\w+)(?<FileFormat>\.\w+)\ (?<StatusCode>\d{3})\ (?<NumberOfBytes>\d+)");
+                    @"(?<IpByte1>\d{1,3})\.(?<IpByte2>\d{1,3})\.(?<IpByte3>\d{1,3})\.(?<IpByte4>\d{1,3})\ \-\ \- \[(?<Day>\d{1,2})\/(?<Month>\d{1,2})\/(?<Year>\d{4})\:(?<Hour>\d{1,2})\:(?<Minutes>\d{1,2})\:(?<Seconds>\d{1,2})\]\ (?<Method>\w+)\ (?<Protocol>\w+)\:\/\/(?<filename>\w+)(?<FileFormat>\.\w+)\ (?<StatusCode>\w+)\ (?<NumberOfBytes>\d+)");
             var result =
                 from line in lines
                 let values = regex.Match(line)
@@ -55,7 +55,7 @@ namespace LOG
                             Protocol = values.Groups[12].Value,
                             FileName = values.Groups[13].Value,
                             FileExtension = values.Groups[14].Value,
-                            StatusCode = Convert.ToInt32(values.Groups[15].Value),
+                            StatusCode = values.Groups[15].Value,
                             NumberOfBytes = Convert.ToInt32(values.Groups[16].Value)
                         }
                     );
