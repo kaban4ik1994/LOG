@@ -42,6 +42,12 @@
     <Compile Include="JournalRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ip\Ip.csproj">
+      <Project>{c9340e84-dee7-4df0-a7c1-c6c512daab75}</Project>
+      <Name>Ip</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

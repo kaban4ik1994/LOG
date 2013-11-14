@@ -7,3 +7,5 @@ E:\программирование\курс3\объектно- ориентир
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\File Analyzer\bin\Debug\Journal Record.pdb
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\File Analyzer\bin\Debug\Convert Item To String.dll
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\File Analyzer\bin\Debug\Convert Item To String.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\File Analyzer\bin\Debug\Ip.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\File Analyzer\bin\Debug\Ip.pdb

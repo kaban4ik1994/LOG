@@ -12,8 +12,8 @@ namespace Analyzer
             string filePath;
             string numberLines;
             string startLine;
-            string startDate;
-            string endDate;
+            string startDate=null;
+            string endDate=null;
             var commands = CommandLine.Pars(line);
             if (!commands.TryGetValue("filepath", out filePath)) return;
             var logContent = new LogReader(filePath);
@@ -38,21 +38,12 @@ namespace Analyzer
                     fileAnalyzer.GetWeightCoefficientOfMethod("404"));
 
             Console.WriteLine("________________________________________________________________________________");
-            if (commands.TryGetValue("startdate", out startDate) &&
-                !commands.TryGetValue("enddate", out endDate))
-            {
-                Console.WriteLine(fileAnalyzer.GetLines(Convert.ToDateTime(startDate), fileAnalyzer.GetMaximumDate()));
-            }
-            if (!commands.TryGetValue("startdate", out startDate) &&
-                commands.TryGetValue("enddate", out endDate))
-            {
-                Console.WriteLine(fileAnalyzer.GetLines(fileAnalyzer.GetMinimumDate(), Convert.ToDateTime(endDate)));
-            }
-            if (commands.TryGetValue("startdate", out startDate) &&
-                commands.TryGetValue("enddate", out endDate))
-            {
-                Console.WriteLine(fileAnalyzer.GetLines(Convert.ToDateTime(startDate), Convert.ToDateTime(endDate)));
-            }
+            
+            commands.TryGetValue("startdate", out startDate);
+            commands.TryGetValue("enddate", out endDate);
+            Console.WriteLine(fileAnalyzer.GetLines(Convert.ToDateTime(startDate), Convert.ToDateTime(endDate)));
+            
+            
             Console.WriteLine("________________________________________________________________________________");
             Console.WriteLine("Unique ip:");
             Console.WriteLine(fileAnalyzer.GetUniqueIp());

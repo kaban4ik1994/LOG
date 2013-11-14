@@ -7,3 +7,5 @@ E:\программирование\курс3\объектно- ориентир
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\SaveToFile\obj\Debug\SaveToFile.dll
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\SaveToFile\obj\Debug\SaveToFile.pdb
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\SaveToFile\obj\Debug\Save To File.csprojResolveAssemblyReference.cache
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\SaveToFile\bin\Debug\Ip.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\SaveToFile\bin\Debug\Ip.pdb

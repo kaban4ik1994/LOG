@@ -57,6 +57,10 @@
       <Project>{b2e9ac07-7ba4-4103-a446-d141337ad34e}</Project>
       <Name>File Analyzer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Ip\Ip.csproj">
+      <Project>{c9340e84-dee7-4df0-a7c1-c6c512daab75}</Project>
+      <Name>Ip</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Journal Record\Journal Record.csproj">
       <Project>{68a49ab7-b037-4caa-8bef-a8c2405bdf02}</Project>
       <Name>Journal Record</Name>

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartArguments>--filepath=E:\logFiles\test.txt --numberlines=5 --startline=1 --startdate=2013-11-06T12:30:14</StartArguments>
+    <StartArguments>--filepath=E:\logFiles\test.txt --numberlines=5 --startline=1 --startdate=2013-11-13T10:04:22</StartArguments>
   </PropertyGroup>
 </Project>

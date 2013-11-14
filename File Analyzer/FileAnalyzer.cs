@@ -80,7 +80,11 @@ namespace File_Analyzer
 
         public StringBuilder GetLines(DateTime startDate, DateTime endDate)
         {
+
             var result=new StringBuilder();
+            if (startDate == Convert.ToDateTime(null) && endDate == Convert.ToDateTime(null)) return result;
+            if (startDate == Convert.ToDateTime(null)) startDate = GetMinimumDate();
+            if (endDate == Convert.ToDateTime(null)) endDate = GetMaximumDate();
             var converter = new ConvertItemToString();
             foreach (var record in _recordList.Where(record => ((DateTime.Compare(startDate, record.Date) < 0) ||
                                                                 (DateTime.Compare(startDate, record.Date) == 0)) &&
@@ -89,16 +93,7 @@ namespace File_Analyzer
             {
                 result.AppendLine(converter.ConvertToString(record));
             }
-            /*foreach (var record in _recordList)
-            {
-                if(((DateTime.Compare(startDate, record.Date)<0)||
-                    (DateTime.Compare(startDate, record.Date)==0))&&
-                   ((DateTime.Compare(endDate, record.Date)>0)||
-                    (DateTime.Compare(endDate, record.Date)==0)))
-                {
-                    result.AppendLine(converter.ConvertToString(record));
-                }
-            } */
+
             return result;
         }
 

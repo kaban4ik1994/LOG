@@ -1,0 +1,5 @@
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Ip\bin\Debug\Ip.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Ip\bin\Debug\Ip.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Ip\obj\Debug\Ip.csprojResolveAssemblyReference.cache
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Ip\obj\Debug\Ip.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Ip\obj\Debug\Ip.pdb

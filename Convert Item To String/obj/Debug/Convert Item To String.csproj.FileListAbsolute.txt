@@ -5,3 +5,5 @@ E:\программирование\курс3\объектно- ориентир
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Convert Item To String\obj\Debug\Convert Item To String.csprojResolveAssemblyReference.cache
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Convert Item To String\obj\Debug\Convert Item To String.dll
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Convert Item To String\obj\Debug\Convert Item To String.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Convert Item To String\bin\Debug\Ip.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Convert Item To String\bin\Debug\Ip.pdb

@@ -61,6 +61,10 @@
       <Project>{8ad5f00f-beac-479a-99bd-c7239534643b}</Project>
       <Name>File Generator</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Ip\Ip.csproj">
+      <Project>{c9340e84-dee7-4df0-a7c1-c6c512daab75}</Project>
+      <Name>Ip</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Journal Configuration\Journal Configuration.csproj">
       <Project>{a56d132f-00da-40c4-b935-d10008713d4f}</Project>
       <Name>Journal Configuration</Name>

@@ -47,6 +47,10 @@
       <Project>{71e090ef-5c98-4104-a1dd-ba0dd5074d0f}</Project>
       <Name>Convert Item To String</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Ip\Ip.csproj">
+      <Project>{c9340e84-dee7-4df0-a7c1-c6c512daab75}</Project>
+      <Name>Ip</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Journal Record\Journal Record.csproj">
       <Project>{68a49ab7-b037-4caa-8bef-a8c2405bdf02}</Project>
       <Name>Journal Record</Name>

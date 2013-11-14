@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using Journal_Record;
+using Ip = Ip.Ip;
+
 namespace File_Generator
 {
     public class FileGenerator
@@ -17,6 +20,18 @@ namespace File_Generator
         private int _minNumberOfBytes;
         private int _maxNumberOfBytes;
         private Settings.Settings _parameters;
+        private int _numberOfUniqueIp;
+        private readonly List<global::Ip.Ip> _ipList=new List<global::Ip.Ip>();
+
+
+        public int NumberOfUniqueIp
+        {
+            set
+            {
+                _numberOfUniqueIp = value;
+            }
+
+        }
 
         public string[] Protocol
         {
@@ -124,11 +139,11 @@ namespace File_Generator
             var availableValues = values as KeyValuePair<string, int>[] ?? values.ToArray();
             var sumOfWeightCoefficients = availableValues.Sum(keyValuePair => keyValuePair.Value); // сумма весовых коэффициентов в массиве
 
-            sumOfWeightCoefficients = arrayOfValues.Where(method => FindWeightingCoefficientInTheFile(method,availableValues) == -1).Aggregate(sumOfWeightCoefficients, (current, method) => current + current / arrayOfValues.Count); //пересчет суммы если есть методы, которые не были описаны в файле конфигурации
+            sumOfWeightCoefficients = arrayOfValues.Where(method => FindWeightingCoefficientInTheFile(method, availableValues) == -1).Aggregate(sumOfWeightCoefficients, (current, method) => current + current / arrayOfValues.Count); //пересчет суммы если есть методы, которые не были описаны в файле конфигурации
             return sumOfWeightCoefficients;
         }
 
-        private string GetRandomValue(IEnumerable<string> arrayOfValues, int sumOfWeightCoefficients, IEnumerable<KeyValuePair<string,int>> available)
+        private string GetRandomValue(IEnumerable<string> arrayOfValues, int sumOfWeightCoefficients, IEnumerable<KeyValuePair<string, int>> available)
         {
             var result = string.Empty;
             var randomWeightCoefficientOfMethods = _random.Next(1, sumOfWeightCoefficients);
@@ -137,7 +152,7 @@ namespace File_Generator
             var keyValuePairs = available as KeyValuePair<string, int>[] ?? available.ToArray();
             foreach (var value in arrayOfValues)
             {
-                var weightCoefficient = FindWeightingCoefficientInTheFile(value,keyValuePairs);
+                var weightCoefficient = FindWeightingCoefficientInTheFile(value, keyValuePairs);
                 tempWeightCoefficient += weightCoefficient != -1
                     ? weightCoefficient
                     : sumOfWeightCoefficients / keyValuePairs.Length; //если коэффициент не найден, то считаем, что он равен среднему арифметическому среди всех элементов.
@@ -155,10 +170,19 @@ namespace File_Generator
         private JournalRecord GeneratRecord()
         {
             var fileName = string.Empty;
-            var ipByte1 = Convert.ToByte(_random.Next(1, 128));
-            var ipByte2 = Convert.ToByte(_random.Next(1, 254));
-            var ipByte3 = Convert.ToByte(_random.Next(1, 254));
-            var ipByte4 = Convert.ToByte(_random.Next(1, 254));
+            var ip=new global::Ip.Ip();
+            if (_ipList.Count < _numberOfUniqueIp)
+            {
+                ip.IpByte1 = Convert.ToByte(_random.Next(1, 128));
+                ip.IpByte2 = Convert.ToByte(_random.Next(1, 254));
+                ip.IpByte3 = Convert.ToByte(_random.Next(1, 254));
+                ip.IpByte4 = Convert.ToByte(_random.Next(1, 254));
+                _ipList.Add(ip);
+            }
+            else
+            {
+                ip = _ipList.ElementAt(_random.Next(0, _ipList.Count));
+            }
             var date = _startTime;
             _startTime = _startTime.AddMilliseconds(_random.Next(_minIntervalInMilliseconds, _maxIntervalInMilliseconds));
             var randomMethod = GetRandomValue(_httpMethods, SumOfWeightCoefficient(_httpMethods, _parameters.AvailableMethods),_parameters.AvailableMethods);
@@ -173,10 +197,10 @@ namespace File_Generator
             var numberOfBytes = _random.Next(_minNumberOfBytes, _maxNumberOfBytes);
             var structLine = new JournalRecord
             {
-                IpByte1 = ipByte1,
-                IpByte2 = ipByte2,
-                IpByte3 = ipByte3,
-                IpByte4 = ipByte4,
+                IpByte1 = ip.IpByte1,
+                IpByte2 = ip.IpByte2,
+                IpByte3 = ip.IpByte3,
+                IpByte4 = ip.IpByte4,
                 Date = date,
                 Method = randomMethod,
                 Protocol = protocol,

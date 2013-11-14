@@ -3,3 +3,5 @@ E:\программирование\курс3\объектно- ориентир
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Journal Record\obj\Debug\Journal Record.csprojResolveAssemblyReference.cache
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Journal Record\obj\Debug\Journal Record.dll
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Journal Record\obj\Debug\Journal Record.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Journal Record\bin\Debug\Ip.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Journal Record\bin\Debug\Ip.pdb
