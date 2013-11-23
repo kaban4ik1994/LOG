@@ -32,7 +32,12 @@ namespace Generator
                 MaxIntervalInMilliseconds = 1000,
                 MinNumberOfBytes = 1,
                 NumberOfUniqueIp=Convert.ToInt32(numberOfUniqueIp),
-                MaxNumberOfBytes = 100
+                MaxNumberOfBytes = 100,
+                MinNumberOfRepeatedIp = 2,
+                MaxNumberOfRepeatedIp = 4,
+                MinLengthOfFileName = 4,
+                MaxLengthOfFileName = 30
+
             };
                 SaveToFile.SaveToFile.SaveToFileRecords(fileGenerator.CreateLogRecords(Convert.ToInt32(numberLines)), filePath);
             }

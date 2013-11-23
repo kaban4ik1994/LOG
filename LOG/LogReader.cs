@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Journal_Record;
+using Ip = Ip.Ip;
+
 namespace LOG
 {
     public class LogReader
@@ -40,10 +42,13 @@ namespace LOG
                     (
                         new JournalRecord
                         {
-                            IpByte1 = Convert.ToByte(values.Groups[1].Value),
-                            IpByte2 = Convert.ToByte(values.Groups[2].Value),
-                            IpByte3 = Convert.ToByte(values.Groups[3].Value),
-                            IpByte4 = Convert.ToByte(values.Groups[4].Value),
+                            Ip = new global::Ip.Ip
+                            {
+                                IpByte1 = Convert.ToByte(values.Groups[1].Value),
+                                IpByte2 = Convert.ToByte(values.Groups[2].Value),
+                                IpByte3 = Convert.ToByte(values.Groups[3].Value),
+                                IpByte4 = Convert.ToByte(values.Groups[4].Value)
+                            },
                             Date =
                                 new DateTime(Convert.ToInt32(values.Groups[7].Value),
                                     Convert.ToInt32(values.Groups[6].Value),

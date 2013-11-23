@@ -39,7 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Analyzer Param\ParametersAnalyzer.cs" />
+    <Compile Include="Analyzer Param\ParametersAnalyzerByDate.cs" />
+    <Compile Include="Analyzer Param\ParametersAnalyzerByIp.cs" />
+    <Compile Include="Analyzer Param\ParametersAnalyzerByWeightingCoefficients.cs" />
+    <Compile Include="Analyzer Param\ParametersOfAnalyzerLine.cs" />
+    <Compile Include="Analyzer\AnalyzerByDate.cs" />
+    <Compile Include="Analyzer\AnalyzerByIp.cs" />
+    <Compile Include="Analyzer\AnalyzerByWeightingCoefficients.cs" />
     <Compile Include="FileAnalyzer.cs" />
+    <Compile Include="Analyzer\IFileAnaluzer.cs" />
+    <Compile Include="Analyzer\LinesAnalyzer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +66,7 @@
       <Name>Journal Record</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

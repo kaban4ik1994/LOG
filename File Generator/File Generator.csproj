@@ -40,6 +40,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FileGenerator.cs" />
+    <Compile Include="Generator Param\CreationOptionsFileExtension.cs" />
+    <Compile Include="Generator Param\CreationOptionsFileName.cs" />
+    <Compile Include="Generator Param\CreationOptionsNumberOfBytes.cs" />
+    <Compile Include="Generator Param\CreationOptionsProtocol.cs" />
+    <Compile Include="Generator Param\DateOfCreationOptions.cs" />
+    <Compile Include="Generator Param\CreationOptionsIp.cs" />
+    <Compile Include="Generator Param\CreationOptionsOfTheMethod.cs" />
+    <Compile Include="Generator Param\CreationOptionsOfTheStatusCode.cs" />
+    <Compile Include="Generator Param\CreationOptionsValue.cs" />
+    <Compile Include="Generator\GeneratorDate.cs" />
+    <Compile Include="Generator\GeneratorFileExtension.cs" />
+    <Compile Include="Generator\GeneratorFileName.cs" />
+    <Compile Include="Generator\GeneratorIp.cs" />
+    <Compile Include="Generator\GeneratorMethod.cs" />
+    <Compile Include="Generator\GeneratorNumberOfBytes.cs" />
+    <Compile Include="Generator\GeneratorProtocol.cs" />
+    <Compile Include="Generator\GeneratorRandomValue.cs" />
+    <Compile Include="Generator\GeneratorStatusCode.cs" />
+    <Compile Include="Generator\IFileGenerator.cs" />
+    <Compile Include="Generator\InitializeTheListsOfUniqueIp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

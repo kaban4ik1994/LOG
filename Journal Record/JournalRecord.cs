@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Journal_Record
 {
-    public class JournalRecord:Ip.Ip
+    public class JournalRecord
     {
-
+        public Ip.Ip Ip { get; set; }
         public DateTime Date { get; set; }
         public string Method { get; set; }
         public string Protocol { get; set; }

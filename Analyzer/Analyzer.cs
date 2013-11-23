@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using Command_Line;
 using File_Analyzer;
 using LOG;
@@ -17,7 +18,10 @@ namespace Analyzer
             var commands = CommandLine.Pars(line);
             if (!commands.TryGetValue("filepath", out filePath)) return;
             var logContent = new LogReader(filePath);
-            var fileAnalyzer = new FileAnalyzer(logContent.EventList);
+            var fileAnalyzer = new FileAnalyzer
+            {
+                RecordList = logContent.EventList.ToList()
+            };
             if (commands.TryGetValue("numberlines", out numberLines) &&
                 commands.TryGetValue("startline", out startLine))
             {
