@@ -3,29 +3,33 @@ using System.Linq;
 using System.Text;
 using Convert_Item_To_String;
 using File_Analyzer.Analyzer_Param;
+using File_Analyzer.Result_Analyzer;
 using Journal_Record;
 
 namespace File_Analyzer.Analyzer
 {
-    class LinesAnalyzer : IFileAnaluzer<StringBuilder>
+    class LinesAnalyzer : IFileAnaluzer<ResultLinesAnalyzer>
     {
 
         public List<JournalRecord> RecordList { get; set; }
-        
-        public StringBuilder Analyzer(ParametersAnalyzer parameters)
+
+        public ResultLinesAnalyzer Analyz(IParametersAnalyzer parameters)
         {
 
-            var parameter = (ParametersOfAnalyzerLine) parameters;
-            var result = new StringBuilder();
+            var parameter = (ParametersOfAnalyzerLine)parameters;
+            var result = new ResultLinesAnalyzer
+            {
+                Result = new List<JournalRecord>()
+            };
             var converter = new ConvertItemToString();
             if (!RecordList.Any()) return result;
-            for (var i =parameter.StartLine; i < parameter.StartLine + parameter.NumberLines; i++)
+            for (var i = parameter.StartLine; i < parameter.StartLine + parameter.NumberLines; i++)
             {
-                result.AppendLine(converter.ConvertToString(RecordList.ElementAt(i)));
+                result.Result.Add(RecordList.ElementAt(i));
             }
             return result;
         }
 
-        
+
     }
 }

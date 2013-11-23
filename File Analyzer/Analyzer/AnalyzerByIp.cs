@@ -2,11 +2,13 @@
 using System.Linq;
 using System.Text;
 using File_Analyzer.Analyzer_Param;
+using File_Analyzer.Result_Analyzer;
 using Journal_Record;
+
 
 namespace File_Analyzer.Analyzer
 {
-    class AnalyzerByIp : IFileAnaluzer<StringBuilder>
+    class AnalyzerByIp : IFileAnaluzer<ResultAnalyzerByIp>
     {
         public List<JournalRecord> RecordList { get; set; }
 
@@ -15,9 +17,12 @@ namespace File_Analyzer.Analyzer
             return ipList.Any(ip1 => ip1 == ip);
         }
 
-        public StringBuilder Analyzer(ParametersAnalyzer parameters)
+        public ResultAnalyzerByIp Analyz(IParametersAnalyzer parameters)
         {
-            var result = new StringBuilder();
+            var result = new ResultAnalyzerByIp
+            {
+                Result = new List<Ip.Ip>()
+            };
             var ipList = new List<Ip.Ip>();
             for (var i = 0; i < RecordList.Count; i++)
             {
@@ -30,11 +35,8 @@ namespace File_Analyzer.Analyzer
                 };
                 if (ContainsIp(ip, ipList)) continue;
                 ipList.Add(ip);
-                result =
-                    result.AppendLine(string.Format("{0}.{1}.{2}.{3}", ip.IpByte1, ip.IpByte2, ip.IpByte3,
-                        ip.IpByte4));
+                result.Result.Add(ip);
             }
-
             return result;
         }
     }

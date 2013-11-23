@@ -1,9 +1,13 @@
-﻿using File_Analyzer.Analyzer_Param;
+﻿using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
+using File_Analyzer.Analyzer_Param;
+using Journal_Record;
 
 namespace File_Analyzer.Analyzer
 {
-    interface IFileAnaluzer<out T>
+    public interface IFileAnaluzer<out T>
     {
-        T Analyzer(ParametersAnalyzer parameters);
+        T Analyz(IParametersAnalyzer parameters);
+        List<Journal_Record.JournalRecord> RecordList { get; set; }
     }
 }

@@ -1,14 +1,16 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using File_Analyzer.Analyzer_Param;
+using File_Analyzer.Result_Analyzer;
 using Journal_Record;
 
 namespace File_Analyzer.Analyzer
 {
-    class AnalyzerByWeightingCoefficients : IFileAnaluzer<double>
+    class AnalyzerByWeightingCoefficients : IFileAnaluzer<ResultAnalyzerByWeightingCoefficients>
     {
         public List<JournalRecord> RecordList { get; set; }
 
-        public double Analyzer(ParametersAnalyzer parameters)
+        public ResultAnalyzerByWeightingCoefficients Analyz(IParametersAnalyzer parameters)
         {
             var parameter = (ParametersAnalyzerByWeightingCoefficients)parameters;
             double count = 0;
@@ -19,7 +21,8 @@ namespace File_Analyzer.Analyzer
                 if (value.Protocol == parameter.ValueName) count++;
                 if (value.StatusCode == parameter.ValueName) count++;
             }
-            return count / RecordList.Count;
+
+            return new ResultAnalyzerByWeightingCoefficients {Result = count/RecordList.Count};
         }
 
 

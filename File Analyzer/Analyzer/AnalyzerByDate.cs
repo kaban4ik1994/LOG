@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using Convert_Item_To_String;
 using File_Analyzer.Analyzer_Param;
+using File_Analyzer.Result_Analyzer;
 using Journal_Record;
 
 namespace File_Analyzer.Analyzer
 {
-    class AnalyzerByDate : IFileAnaluzer<StringBuilder>
+    class AnalyzerByDate : IFileAnaluzer<ResultAnalyzerByDate>
     {
         public List<JournalRecord> RecordList { get; set; }
 
@@ -40,11 +41,15 @@ namespace File_Analyzer.Analyzer
             return result;
         }
 
-        public StringBuilder Analyzer(ParametersAnalyzer parameters)
+        public ResultAnalyzerByDate Analyz(IParametersAnalyzer parameters)
         {
-            var parameter = (ParametersAnalyzerByDate) parameters;
-            var result = new StringBuilder();
-            if (parameter.StartDate == Convert.ToDateTime(null) && parameter.EndDate == Convert.ToDateTime(null)) return result;
+            var parameter = (ParametersAnalyzerByDate)parameters;
+            var result = new ResultAnalyzerByDate
+            {
+                Result = new List<JournalRecord>()
+            };
+            if (parameter.StartDate == Convert.ToDateTime(null) && parameter.EndDate == Convert.ToDateTime(null))
+                return result;
             if (parameter.StartDate == Convert.ToDateTime(null)) parameter.StartDate = GetMinimumDate();
             if (parameter.EndDate == Convert.ToDateTime(null)) parameter.EndDate = GetMaximumDate();
             var converter = new ConvertItemToString();
@@ -53,7 +58,7 @@ namespace File_Analyzer.Analyzer
                                                                ((DateTime.Compare(parameter.EndDate, record.Date) > 0) ||
                                                                 (DateTime.Compare(parameter.EndDate, record.Date) == 0))))
             {
-                result.AppendLine(converter.ConvertToString(record));
+                result.Result.Add(record);
             }
 
             return result;

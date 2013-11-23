@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Управление общими сведениями о сборке осуществляется с помощью 
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("File Analyzer")]
+[assembly: AssemblyTitle("File Analyz")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Romeo1994")]
-[assembly: AssemblyProduct("File Analyzer")]
+[assembly: AssemblyProduct("File Analyz")]
 [assembly: AssemblyCopyright("Copyright © Romeo1994 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

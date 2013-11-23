@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace File_Analyzer.Analyzer_Param
+namespace File_Analyzer.Result_Analyzer
 {
-    public interface IParametersAnalyzer
+    public interface IResultAnalyzer
     {
-        
+
     }
 }

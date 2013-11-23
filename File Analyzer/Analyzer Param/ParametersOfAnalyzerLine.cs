@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace File_Analyzer.Analyzer_Param
 {
-    class ParametersOfAnalyzerLine:ParametersAnalyzer
+    class ParametersOfAnalyzerLine:IParametersAnalyzer
     {
         public int StartLine { get; set; }
         public int NumberLines { get; set; }

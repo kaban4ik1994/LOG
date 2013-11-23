@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace File_Analyzer.Analyzer_Param
 {
-    class ParametersAnalyzerByIp:ParametersAnalyzer
+    class ParametersAnalyzerByIp:IParametersAnalyzer
     {
         
     }

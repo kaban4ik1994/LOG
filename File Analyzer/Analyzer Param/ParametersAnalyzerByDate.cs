@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace File_Analyzer.Analyzer_Param
 {
-    class ParametersAnalyzerByDate : ParametersAnalyzer
+    class ParametersAnalyzerByDate : IParametersAnalyzer
     {
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
