@@ -20,7 +20,7 @@ namespace Analyzer
             AnalyzerFactory.RecordList = logContent.EventList.ToList();
 
                 //  var grahp = new LibraryCreateGraph(1000, 1000);
-                Console.WriteLine(fileAnalyzer.Analyz(AnalyzerFactory.GetParameterAnalyzer(), AnalyzerFactory.GetAnalyzer(),AnalyzerFactory.GetConvertAnalyzer()));
+                Console.WriteLine(fileAnalyzer.Analyz(AnalyzerFactory.GetResultsAnalyzerFactory()));
             }
           
         }

@@ -11,11 +11,11 @@ namespace File_Analyzer
 {
     public class FileAnalyzer
     {
-        public StringBuilder Analyz(IParametersAnalyzer parametersAnalyzer, IFileAnaluzer<dynamic> fileAnaluzer,IConvertorAnalyzerResult<StringBuilder> typeConverter)
+        public StringBuilder Analyz(ResultsAnalyzerFactory typeParameters)
         {
-           
-            if (parametersAnalyzer != null && fileAnaluzer != null)
-                return typeConverter.Convert(fileAnaluzer.Analyz(parametersAnalyzer));
+
+            if (typeParameters!=null)
+                return typeParameters.TypeConverterResultAnalyzer.Convert(typeParameters.AnalyzerType.Analyz(typeParameters.TypeParameterAnalyzer));
             return new StringBuilder();
         }
     }

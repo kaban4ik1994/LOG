@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Pipes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,11 +17,11 @@ namespace File_Analyzer
         public static Dictionary<string, string> CommandLineParameters { get; set; }
         public static List<JournalRecord> RecordList { get; set; }
 
-        public static IParametersAnalyzer GetParameterAnalyzer()
+        public static ResultsAnalyzerFactory GetResultsAnalyzerFactory()
         {
             string typeAnalyzer;
             CommandLineParameters.TryGetValue("report", out typeAnalyzer);
-            IParametersAnalyzer parametersAnalyzer;
+            var resultsAnalyzerFactory = new ResultsAnalyzerFactory();
             if (typeAnalyzer == "LinesAnalyzer")
             {
                 string numberLines;
@@ -28,29 +29,44 @@ namespace File_Analyzer
                 CommandLineParameters.TryGetValue("numberLine", out numberLines);
                 CommandLineParameters.TryGetValue("startLine", out startLine);
 
-                parametersAnalyzer = new ParametersOfAnalyzerLine
+                resultsAnalyzerFactory.TypeParameterAnalyzer = new ParametersOfAnalyzerLine
                 {
                     NumberLines = Convert.ToInt32(numberLines),
                     StartLine = Convert.ToInt32(startLine)
                 };
-                return parametersAnalyzer;
+                resultsAnalyzerFactory.AnalyzerType = new LinesAnalyzer
+                {
+                    RecordList = RecordList
+                };
+                resultsAnalyzerFactory.TypeConverterResultAnalyzer = new ConverterResultLinesAnalyzer();
+                return resultsAnalyzerFactory;
             }
 
             if (typeAnalyzer == "AnalyzerByWeightCoefficients")
             {
                 string value;
                 CommandLineParameters.TryGetValue("Value", out value);
-                parametersAnalyzer = new ParametersAnalyzerByWeightingCoefficients
+                resultsAnalyzerFactory.TypeParameterAnalyzer = new ParametersAnalyzerByWeightingCoefficients
                 {
                     ValueName = value
                 };
-                return parametersAnalyzer;
+                resultsAnalyzerFactory.AnalyzerType = new AnalyzerByWeightingCoefficients
+                {
+                    RecordList = RecordList
+                };
+                resultsAnalyzerFactory.TypeConverterResultAnalyzer = new ConverterResultByWeightingCoefficients();
+                return resultsAnalyzerFactory;
             }
 
             if (typeAnalyzer == "AnalyzerByIp")
             {
-                parametersAnalyzer = new ParametersAnalyzerByIp();
-                return parametersAnalyzer;
+                resultsAnalyzerFactory.TypeParameterAnalyzer = new ParametersAnalyzerByIp();
+                resultsAnalyzerFactory.AnalyzerType = new AnalyzerByIp
+                {
+                    RecordList = RecordList
+                };
+                resultsAnalyzerFactory.TypeConverterResultAnalyzer = new ConverterResultByIp();
+                return resultsAnalyzerFactory;
             }
             if (typeAnalyzer == "AnalyzerByDate")
             {
@@ -58,88 +74,22 @@ namespace File_Analyzer
                 string endTime;
                 CommandLineParameters.TryGetValue("startDate", out startTime);
                 CommandLineParameters.TryGetValue("endDate", out endTime);
-                parametersAnalyzer = new ParametersAnalyzerByDate
+                resultsAnalyzerFactory.TypeParameterAnalyzer = new ParametersAnalyzerByDate
                 {
                     EndDate = Convert.ToDateTime(endTime),
                     StartDate = Convert.ToDateTime(startTime)
                 };
-                return parametersAnalyzer;
-            }
-            return null;
-        }
-
-        public static IFileAnaluzer<IResultAnalyzer> GetAnalyzer()
-        {
-            string typeAnalyzer;
-            CommandLineParameters.TryGetValue("report", out typeAnalyzer);
-
-            if (typeAnalyzer == "LinesAnalyzer")
-            {
-                IFileAnaluzer<ResultLinesAnalyzer> analyzerInterface = new LinesAnalyzer
-                 {
-                     RecordList = RecordList
-                 };
-                return analyzerInterface;
-            }
-
-            if (typeAnalyzer == "AnalyzerByWeightCoefficients")
-            {
-                IFileAnaluzer<ResultAnalyzerByWeightingCoefficients> analyzerInterface = new AnalyzerByWeightingCoefficients
+                resultsAnalyzerFactory.AnalyzerType = new AnalyzerByDate
                 {
                     RecordList = RecordList
                 };
-                return analyzerInterface;
-            }
-
-            if (typeAnalyzer == "AnalyzerByIp")
-            {
-                IFileAnaluzer<ResultAnalyzerByIp> analyzerInterface = new AnalyzerByIp
-                {
-                    RecordList = RecordList
-                };
-                return analyzerInterface;
-            }
-
-            if (typeAnalyzer == "AnalyzerByDate")
-            {
-                IFileAnaluzer<ResultAnalyzerByDate> analyzerInterface = new AnalyzerByDate
-                {
-                    RecordList = RecordList
-                };
-                return analyzerInterface;
+                resultsAnalyzerFactory.TypeConverterResultAnalyzer = new ConverterResultAnalyzerByDate();
+                return resultsAnalyzerFactory;
             }
             return null;
+
+
         }
 
-        public static IConvertorAnalyzerResult<StringBuilder> GetConvertAnalyzer()
-        {
-            string typeAnalyzer;
-            CommandLineParameters.TryGetValue("report", out typeAnalyzer);
-
-            if (typeAnalyzer == "LinesAnalyzer")
-            {  
-                var analyzerInterface=new ConverterResultLinesAnalyzer();
-                return analyzerInterface;
-            }
-
-            if (typeAnalyzer == "AnalyzerByWeightCoefficients")
-            {
-                var analyzerInterface = new ConverterResultByWeightingCoefficients();
-                return analyzerInterface;
-            }
-
-            if (typeAnalyzer == "AnalyzerByIp")
-            {
-                var analyzerInterface = new ConverterResultByIp();
-                return analyzerInterface;
-            }
-
-            if (typeAnalyzer == "AnalyzerByDate")
-            {
-                var analyzerInterface = new ConverterResultAnalyzerByDate();
-                return analyzerInterface;
-            }
-            return null;
-        }
     }
 }

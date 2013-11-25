@@ -62,6 +62,7 @@
     <Compile Include="Result Analyzer\ResultAnalyzerByIp.cs" />
     <Compile Include="Result Analyzer\ResultAnalyzerByWeightingCoefficients.cs" />
     <Compile Include="Result Analyzer\ResultLinesAnalyzer.cs" />
+    <Compile Include="ResultsAnalyzerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Convert Item To String\Convert Item To String.csproj">
