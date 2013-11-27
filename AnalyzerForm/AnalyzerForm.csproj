@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{126DAFA4-19EF-4EC1-9D3E-2445376A0118}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AnalyzerForm</RootNamespace>
+    <AssemblyName>AnalyzerForm</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Analyzer\Analyzer.csproj">
+      <Project>{583dec0d-80bc-40dd-9d56-f1cd9187f455}</Project>
+      <Name>Analyzer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ConfigFileReader\ConfigFileReader.csproj">
+      <Project>{5a2f82d4-2d5d-4cf9-93e9-20d71ed65b32}</Project>
+      <Name>ConfigFileReader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Convert Item To String\Convert Item To String.csproj">
+      <Project>{71e090ef-5c98-4104-a1dd-ba0dd5074d0f}</Project>
+      <Name>Convert Item To String</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\File Analyzer\File Analyzer.csproj">
+      <Project>{b2e9ac07-7ba4-4103-a446-d141337ad34e}</Project>
+      <Name>File Analyzer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\File Generator\File Generator.csproj">
+      <Project>{8ad5f00f-beac-479a-99bd-c7239534643b}</Project>
+      <Name>File Generator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ip\Ip.csproj">
+      <Project>{c9340e84-dee7-4df0-a7c1-c6c512daab75}</Project>
+      <Name>Ip</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Journal Configuration\Journal Configuration.csproj">
+      <Project>{a56d132f-00da-40c4-b935-d10008713d4f}</Project>
+      <Name>Journal Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Journal Record\Journal Record.csproj">
+      <Project>{68a49ab7-b037-4caa-8bef-a8c2405bdf02}</Project>
+      <Name>Journal Record</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LOG\Log Reader.csproj">
+      <Project>{e8105569-19bd-4728-80ff-0e71a492fdcd}</Project>
+      <Name>Log Reader</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SaveToFile\Save To File.csproj">
+      <Project>{69eb70ff-2747-46e2-8243-8d0caa6c3035}</Project>
+      <Name>Save To File</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Settings\Settings.csproj">
+      <Project>{cfc7bbbe-6500-4988-83ad-3893bd0c8143}</Project>
+      <Name>Settings</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Yaml Reader\Yaml Reader.csproj">
+      <Project>{61324115-3f36-41bb-ac0f-58a8116c8682}</Project>
+      <Name>Yaml Reader</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

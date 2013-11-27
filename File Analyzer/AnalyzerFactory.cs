@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO.Pipes;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using File_Analyzer.Analyzer;
@@ -19,72 +20,76 @@ namespace File_Analyzer
 
         public static ResultsAnalyzerFactory GetResultsAnalyzerFactory()
         {
-            string typeAnalyzer;
-            CommandLineParameters.TryGetValue("report", out typeAnalyzer);
-            var resultsAnalyzerFactory = new ResultsAnalyzerFactory();
-            if (typeAnalyzer == "LinesAnalyzer")
+            if (CommandLineParameters != null && RecordList != null)
             {
-                string numberLines;
-                string startLine;
-                CommandLineParameters.TryGetValue("numberLine", out numberLines);
-                CommandLineParameters.TryGetValue("startLine", out startLine);
+                string typeAnalyzer;
+                CommandLineParameters.TryGetValue("report", out typeAnalyzer);
+                var resultsAnalyzerFactory = new ResultsAnalyzerFactory();
+                if (typeAnalyzer == "LinesAnalyzer")
+                {
+                    string numberLines;
+                    string startLine;
+                    CommandLineParameters.TryGetValue("numberLine", out numberLines);
+                    CommandLineParameters.TryGetValue("startLine", out startLine);
+                    int tempValue;
+                    resultsAnalyzerFactory.TypeParameterAnalyzer = new ParametersOfAnalyzerLine
+                    {
+                        NumberLines =int.TryParse(numberLines, out tempValue)?tempValue:0,
+                        StartLine = int.TryParse(startLine, out tempValue) ? tempValue : 0
+                    };
+                    resultsAnalyzerFactory.AnalyzerType = new LinesAnalyzer
+                    {
+                        RecordList = RecordList
+                    };
+                    resultsAnalyzerFactory.TypeConverterResultAnalyzer = new ConverterResultLinesAnalyzer();
+                    return resultsAnalyzerFactory;
+                }
 
-                resultsAnalyzerFactory.TypeParameterAnalyzer = new ParametersOfAnalyzerLine
+                if (typeAnalyzer == "AnalyzerByWeightCoefficients")
                 {
-                    NumberLines = Convert.ToInt32(numberLines),
-                    StartLine = Convert.ToInt32(startLine)
-                };
-                resultsAnalyzerFactory.AnalyzerType = new LinesAnalyzer
-                {
-                    RecordList = RecordList
-                };
-                resultsAnalyzerFactory.TypeConverterResultAnalyzer = new ConverterResultLinesAnalyzer();
-                return resultsAnalyzerFactory;
-            }
+                    string value;
+                    CommandLineParameters.TryGetValue("Value", out value);
+                    resultsAnalyzerFactory.TypeParameterAnalyzer = new ParametersAnalyzerByWeightingCoefficients
+                    {
+                        ValueName = value
+                    };
+                    resultsAnalyzerFactory.AnalyzerType = new AnalyzerByWeightingCoefficients
+                    {
+                        RecordList = RecordList
+                    };
+                    resultsAnalyzerFactory.TypeConverterResultAnalyzer = new ConverterResultByWeightingCoefficients();
+                    return resultsAnalyzerFactory;
+                }
 
-            if (typeAnalyzer == "AnalyzerByWeightCoefficients")
-            {
-                string value;
-                CommandLineParameters.TryGetValue("Value", out value);
-                resultsAnalyzerFactory.TypeParameterAnalyzer = new ParametersAnalyzerByWeightingCoefficients
+                if (typeAnalyzer == "AnalyzerByIp")
                 {
-                    ValueName = value
-                };
-                resultsAnalyzerFactory.AnalyzerType = new AnalyzerByWeightingCoefficients
+                    resultsAnalyzerFactory.TypeParameterAnalyzer = new ParametersAnalyzerByIp();
+                    resultsAnalyzerFactory.AnalyzerType = new AnalyzerByIp
+                    {
+                        RecordList = RecordList
+                    };
+                    resultsAnalyzerFactory.TypeConverterResultAnalyzer = new ConverterResultByIp();
+                    return resultsAnalyzerFactory;
+                }
+                if (typeAnalyzer == "AnalyzerByDate")
                 {
-                    RecordList = RecordList
-                };
-                resultsAnalyzerFactory.TypeConverterResultAnalyzer = new ConverterResultByWeightingCoefficients();
-                return resultsAnalyzerFactory;
-            }
-
-            if (typeAnalyzer == "AnalyzerByIp")
-            {
-                resultsAnalyzerFactory.TypeParameterAnalyzer = new ParametersAnalyzerByIp();
-                resultsAnalyzerFactory.AnalyzerType = new AnalyzerByIp
-                {
-                    RecordList = RecordList
-                };
-                resultsAnalyzerFactory.TypeConverterResultAnalyzer = new ConverterResultByIp();
-                return resultsAnalyzerFactory;
-            }
-            if (typeAnalyzer == "AnalyzerByDate")
-            {
-                string startTime;
-                string endTime;
-                CommandLineParameters.TryGetValue("startDate", out startTime);
-                CommandLineParameters.TryGetValue("endDate", out endTime);
-                resultsAnalyzerFactory.TypeParameterAnalyzer = new ParametersAnalyzerByDate
-                {
-                    EndDate = Convert.ToDateTime(endTime),
-                    StartDate = Convert.ToDateTime(startTime)
-                };
-                resultsAnalyzerFactory.AnalyzerType = new AnalyzerByDate
-                {
-                    RecordList = RecordList
-                };
-                resultsAnalyzerFactory.TypeConverterResultAnalyzer = new ConverterResultAnalyzerByDate();
-                return resultsAnalyzerFactory;
+                    string startTime;
+                    string endTime;
+                    CommandLineParameters.TryGetValue("startDate", out startTime);
+                    CommandLineParameters.TryGetValue("endDate", out endTime);
+                    DateTime tempValue;
+                    resultsAnalyzerFactory.TypeParameterAnalyzer = new ParametersAnalyzerByDate
+                    {
+                        EndDate = DateTime.TryParse(endTime, out tempValue) ? tempValue : new DateTime(),
+                        StartDate = DateTime.TryParse(startTime, out tempValue) ? tempValue : new DateTime()
+                    };
+                    resultsAnalyzerFactory.AnalyzerType = new AnalyzerByDate
+                    {
+                        RecordList = RecordList
+                    };
+                    resultsAnalyzerFactory.TypeConverterResultAnalyzer = new ConverterResultAnalyzerByDate();
+                    return resultsAnalyzerFactory;
+                }
             }
             return null;
 

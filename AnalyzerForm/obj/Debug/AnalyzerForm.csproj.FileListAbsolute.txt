@@ -1,0 +1,35 @@
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\AnalyzerForm.exe.config
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\AnalyzerForm.exe
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\AnalyzerForm.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\obj\Debug\AnalyzerForm.csprojResolveAssemblyReference.cache
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\obj\Debug\AnalyzerForm.Form1.resources
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\obj\Debug\AnalyzerForm.Properties.Resources.resources
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\obj\Debug\AnalyzerForm.csproj.GenerateResource.Cache
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\obj\Debug\AnalyzerForm.exe
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\obj\Debug\AnalyzerForm.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Analyzer.exe
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\ConfigFileReader.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Convert Item To String.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\File Analyzer.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\File Generator.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Ip.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Journal Configuration.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Journal Record.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\LOG.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\SaveToFile.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Settings.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Yaml Reader.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Command Line.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Analyzer.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\ConfigFileReader.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Convert Item To String.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\File Analyzer.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\File Generator.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Ip.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Journal Configuration.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Journal Record.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\LOG.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\SaveToFile.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Settings.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Yaml Reader.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Command Line.pdb

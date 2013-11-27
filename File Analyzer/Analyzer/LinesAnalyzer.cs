@@ -21,7 +21,6 @@ namespace File_Analyzer.Analyzer
             {
                 Result = new List<JournalRecord>()
             };
-            var converter = new ConvertItemToString();
             if (!RecordList.Any()) return result;
             for (var i = parameter.StartLine; i < parameter.StartLine + parameter.NumberLines; i++)
             {

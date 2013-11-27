@@ -15,7 +15,7 @@ namespace File_Analyzer.Analyzer
 
         public DateTime GetMinimumDate()
         {
-            var result = RecordList[0].Date;
+            var result = RecordList.Count != 0 ? RecordList[0].Date : Convert.ToDateTime(null);
             for (var i = 1; i < RecordList.Count; i++)
             {
                 if (DateTime.Compare(result, RecordList[i].Date) > 0)
@@ -29,7 +29,7 @@ namespace File_Analyzer.Analyzer
 
         public DateTime GetMaximumDate()
         {
-            var result = RecordList[0].Date;
+            var result = RecordList.Count != 0 ? RecordList[0].Date : Convert.ToDateTime(null);
             for (var i = 1; i < RecordList.Count; i++)
             {
                 if (DateTime.Compare(result, RecordList[i].Date) < 0)
@@ -48,15 +48,19 @@ namespace File_Analyzer.Analyzer
             {
                 Result = new List<JournalRecord>()
             };
+
             if (parameter.StartDate == Convert.ToDateTime(null) && parameter.EndDate == Convert.ToDateTime(null))
-                return result;
+            {
+                parameter.StartDate = GetMinimumDate();
+                parameter.EndDate = GetMaximumDate();
+            }
             if (parameter.StartDate == Convert.ToDateTime(null)) parameter.StartDate = GetMinimumDate();
             if (parameter.EndDate == Convert.ToDateTime(null)) parameter.EndDate = GetMaximumDate();
-            var converter = new ConvertItemToString();
-            foreach (var record in RecordList.Where(record => ((DateTime.Compare(parameter.StartDate, record.Date) < 0) ||
-                                                                (DateTime.Compare(parameter.StartDate, record.Date) == 0)) &&
-                                                               ((DateTime.Compare(parameter.EndDate, record.Date) > 0) ||
-                                                                (DateTime.Compare(parameter.EndDate, record.Date) == 0))))
+            
+            foreach (var record in RecordList.Where(record => ((DateTime.Compare(parameter.StartDate, record.Date) <= 0)
+                                                                &&
+                                                               ((DateTime.Compare(parameter.EndDate, record.Date) >= 0)))))
+                                                               
             {
                 result.Result.Add(record);
             }

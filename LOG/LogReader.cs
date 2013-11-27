@@ -24,9 +24,11 @@ namespace LOG
             readFile.Close();
         }
 
+      
+
         public IEnumerable<JournalRecord> EventList
         {
-            get { return _eventList; }
+            get { return _eventList ?? new List<JournalRecord>(); }
         }
 
         private static IEnumerable<JournalRecord> ParsLines(IEnumerable<string> lines)
