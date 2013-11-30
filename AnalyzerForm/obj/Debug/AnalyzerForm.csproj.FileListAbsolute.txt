@@ -33,3 +33,6 @@ E:\программирование\курс3\объектно- ориентир
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Settings.pdb
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Yaml Reader.pdb
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Command Line.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Ninject.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Ninject.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\AnalyzerForm\bin\Debug\Ninject.xml

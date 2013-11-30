@@ -18,3 +18,6 @@ E:\программирование\курс3\объектно- ориентир
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Convert Item To String.pdb
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Ip.dll
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Ip.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Ninject.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Ninject.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Ninject.xml

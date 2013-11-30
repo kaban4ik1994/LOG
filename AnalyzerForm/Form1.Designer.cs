@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.contentsLogFiles = new System.Windows.Forms.RichTextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numberLines = new System.Windows.Forms.TextBox();
+            this.startLine = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.value = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.endDate = new System.Windows.Forms.TextBox();
@@ -42,11 +45,18 @@
             this.reportDate = new System.Windows.Forms.RadioButton();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.value = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.startLine = new System.Windows.Forms.TextBox();
-            this.numberLines = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Ip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Method = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Protocol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FileExtension = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumberOfBytes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -58,14 +68,6 @@
             this.button1.Text = "Open event file";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // contentsLogFiles
-            // 
-            this.contentsLogFiles.Location = new System.Drawing.Point(12, 41);
-            this.contentsLogFiles.Name = "contentsLogFiles";
-            this.contentsLogFiles.Size = new System.Drawing.Size(786, 125);
-            this.contentsLogFiles.TabIndex = 1;
-            this.contentsLogFiles.Text = "";
             // 
             // openFileDialog1
             // 
@@ -85,12 +87,43 @@
             this.groupBox1.Controls.Add(this.reportWeightingCoefficient);
             this.groupBox1.Controls.Add(this.reportUniqueIp);
             this.groupBox1.Controls.Add(this.reportDate);
-            this.groupBox1.Location = new System.Drawing.Point(12, 172);
+            this.groupBox1.Location = new System.Drawing.Point(12, 378);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(786, 96);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Choose report";
+            // 
+            // numberLines
+            // 
+            this.numberLines.Location = new System.Drawing.Point(720, 65);
+            this.numberLines.Name = "numberLines";
+            this.numberLines.Size = new System.Drawing.Size(59, 20);
+            this.numberLines.TabIndex = 11;
+            // 
+            // startLine
+            // 
+            this.startLine.Location = new System.Drawing.Point(720, 42);
+            this.startLine.Name = "startLine";
+            this.startLine.Size = new System.Drawing.Size(60, 20);
+            this.startLine.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(350, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(84, 52);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Method or\r\nFileExtension or \r\nProtocol or \r\nStatusCode: ";
+            // 
+            // value
+            // 
+            this.value.Location = new System.Drawing.Point(440, 39);
+            this.value.Name = "value";
+            this.value.Size = new System.Drawing.Size(74, 20);
+            this.value.TabIndex = 8;
             // 
             // label2
             // 
@@ -171,7 +204,7 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 331);
+            this.richTextBox1.Location = new System.Drawing.Point(12, 537);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(779, 78);
             this.richTextBox1.TabIndex = 3;
@@ -179,7 +212,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 300);
+            this.button2.Location = new System.Drawing.Point(12, 506);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 4;
@@ -187,51 +220,84 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // value
+            // dataGridView1
             // 
-            this.value.Location = new System.Drawing.Point(440, 39);
-            this.value.Name = "value";
-            this.value.Size = new System.Drawing.Size(74, 20);
-            this.value.TabIndex = 8;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Ip,
+            this.UserName,
+            this.Date,
+            this.Method,
+            this.Protocol,
+            this.fileName,
+            this.FileExtension,
+            this.StatusCode,
+            this.NumberOfBytes});
+            this.dataGridView1.Location = new System.Drawing.Point(12, 41);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(942, 331);
+            this.dataGridView1.TabIndex = 5;
             // 
-            // label3
+            // Ip
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(350, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 52);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Method or\r\nFileExtension or \r\nProtocol or \r\nStatusCode: ";
+            this.Ip.HeaderText = "Ip";
+            this.Ip.Name = "Ip";
             // 
-            // startLine
+            // UserName
             // 
-            this.startLine.Location = new System.Drawing.Point(720, 42);
-            this.startLine.Name = "startLine";
-            this.startLine.Size = new System.Drawing.Size(60, 20);
-            this.startLine.TabIndex = 10;
+            this.UserName.HeaderText = "User name";
+            this.UserName.Name = "UserName";
             // 
-            // numberLines
+            // Date
             // 
-            this.numberLines.Location = new System.Drawing.Point(720, 65);
-            this.numberLines.Name = "numberLines";
-            this.numberLines.Size = new System.Drawing.Size(59, 20);
-            this.numberLines.TabIndex = 11;
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            // 
+            // Method
+            // 
+            this.Method.HeaderText = "Method";
+            this.Method.Name = "Method";
+            // 
+            // Protocol
+            // 
+            this.Protocol.HeaderText = "Protocol";
+            this.Protocol.Name = "Protocol";
+            // 
+            // fileName
+            // 
+            this.fileName.HeaderText = "File name";
+            this.fileName.Name = "fileName";
+            // 
+            // FileExtension
+            // 
+            this.FileExtension.HeaderText = "File Extension";
+            this.FileExtension.Name = "FileExtension";
+            // 
+            // StatusCode
+            // 
+            this.StatusCode.HeaderText = "Status Code";
+            this.StatusCode.Name = "StatusCode";
+            // 
+            // NumberOfBytes
+            // 
+            this.NumberOfBytes.HeaderText = "Number Of Bytes";
+            this.NumberOfBytes.Name = "NumberOfBytes";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(810, 438);
+            this.ClientSize = new System.Drawing.Size(1039, 627);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.contentsLogFiles);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -239,7 +305,6 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.RichTextBox contentsLogFiles;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton reportSpecifiedNumberOfRows;
@@ -256,6 +321,16 @@
         private System.Windows.Forms.TextBox value;
         private System.Windows.Forms.TextBox numberLines;
         private System.Windows.Forms.TextBox startLine;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ip;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Method;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Protocol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fileName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FileExtension;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StatusCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumberOfBytes;
     }
 }
 

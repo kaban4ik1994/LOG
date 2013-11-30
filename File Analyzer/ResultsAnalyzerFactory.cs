@@ -7,6 +7,7 @@ using File_Analyzer.Analyzer;
 using File_Analyzer.Analyzer_Param;
 using File_Analyzer.ConverterAnalyzerResult;
 using File_Analyzer.Result_Analyzer;
+using Ninject;
 
 namespace File_Analyzer
 {

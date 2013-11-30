@@ -8,6 +8,7 @@ namespace File_Analyzer.Analyzer
     public interface IFileAnaluzer<out T>
     {
         T Analyz(IParametersAnalyzer parameters);
-        List<Journal_Record.JournalRecord> RecordList { get; set; }
+
+       
     }
 }

@@ -10,6 +10,8 @@ using File_Analyzer.Analyzer_Param;
 using File_Analyzer.ConverterAnalyzerResult;
 using File_Analyzer.Result_Analyzer;
 using Journal_Record;
+using Ninject;
+using Ninject.Parameters;
 
 namespace File_Analyzer
 {
@@ -18,30 +20,35 @@ namespace File_Analyzer
         public static Dictionary<string, string> CommandLineParameters { get; set; }
         public static List<JournalRecord> RecordList { get; set; }
 
+        public static IKernel AppKernel;
+
         public static ResultsAnalyzerFactory GetResultsAnalyzerFactory()
         {
             if (CommandLineParameters != null && RecordList != null)
             {
                 string typeAnalyzer;
                 CommandLineParameters.TryGetValue("report", out typeAnalyzer);
+
                 var resultsAnalyzerFactory = new ResultsAnalyzerFactory();
+                AppKernel = new StandardKernel(new AnalyzerNinjectModule { Parameters = typeAnalyzer });
                 if (typeAnalyzer == "LinesAnalyzer")
                 {
                     string numberLines;
                     string startLine;
+                    var tempValue = 0;
                     CommandLineParameters.TryGetValue("numberLine", out numberLines);
                     CommandLineParameters.TryGetValue("startLine", out startLine);
-                    int tempValue;
                     resultsAnalyzerFactory.TypeParameterAnalyzer = new ParametersOfAnalyzerLine
                     {
-                        NumberLines =int.TryParse(numberLines, out tempValue)?tempValue:0,
+                        NumberLines = int.TryParse(numberLines, out tempValue) ? tempValue : 0,
                         StartLine = int.TryParse(startLine, out tempValue) ? tempValue : 0
                     };
-                    resultsAnalyzerFactory.AnalyzerType = new LinesAnalyzer
-                    {
-                        RecordList = RecordList
-                    };
-                    resultsAnalyzerFactory.TypeConverterResultAnalyzer = new ConverterResultLinesAnalyzer();
+
+                    var analyzerType = AppKernel.Get<LinesAnalyzer>();
+                    analyzerType.RecordList = RecordList;
+                    resultsAnalyzerFactory.AnalyzerType = analyzerType;
+                    var typeConverterResultAnalyzer = AppKernel.Get<ConverterResultLinesAnalyzer>();
+                    resultsAnalyzerFactory.TypeConverterResultAnalyzer = typeConverterResultAnalyzer;
                     return resultsAnalyzerFactory;
                 }
 
@@ -53,22 +60,23 @@ namespace File_Analyzer
                     {
                         ValueName = value
                     };
-                    resultsAnalyzerFactory.AnalyzerType = new AnalyzerByWeightingCoefficients
-                    {
-                        RecordList = RecordList
-                    };
-                    resultsAnalyzerFactory.TypeConverterResultAnalyzer = new ConverterResultByWeightingCoefficients();
+
+                    var analyzerType = AppKernel.Get<AnalyzerByWeightingCoefficients>();
+                    analyzerType.RecordList = RecordList;
+                    resultsAnalyzerFactory.AnalyzerType = analyzerType;
+                    var typeConverterResultAnalyzer = AppKernel.Get<ConverterResultByWeightingCoefficients>();
+                    resultsAnalyzerFactory.TypeConverterResultAnalyzer = typeConverterResultAnalyzer;
                     return resultsAnalyzerFactory;
                 }
 
                 if (typeAnalyzer == "AnalyzerByIp")
                 {
                     resultsAnalyzerFactory.TypeParameterAnalyzer = new ParametersAnalyzerByIp();
-                    resultsAnalyzerFactory.AnalyzerType = new AnalyzerByIp
-                    {
-                        RecordList = RecordList
-                    };
-                    resultsAnalyzerFactory.TypeConverterResultAnalyzer = new ConverterResultByIp();
+                    var analyzerType = AppKernel.Get<AnalyzerByIp>();
+                    analyzerType.RecordList = RecordList;
+                    resultsAnalyzerFactory.AnalyzerType = analyzerType;
+
+                    resultsAnalyzerFactory.TypeConverterResultAnalyzer = AppKernel.Get<ConverterResultByIp>();
                     return resultsAnalyzerFactory;
                 }
                 if (typeAnalyzer == "AnalyzerByDate")
@@ -83,11 +91,10 @@ namespace File_Analyzer
                         EndDate = DateTime.TryParse(endTime, out tempValue) ? tempValue : new DateTime(),
                         StartDate = DateTime.TryParse(startTime, out tempValue) ? tempValue : new DateTime()
                     };
-                    resultsAnalyzerFactory.AnalyzerType = new AnalyzerByDate
-                    {
-                        RecordList = RecordList
-                    };
-                    resultsAnalyzerFactory.TypeConverterResultAnalyzer = new ConverterResultAnalyzerByDate();
+                    var analyzerType = AppKernel.Get<AnalyzerByDate>();
+                    analyzerType.RecordList = RecordList;
+                    resultsAnalyzerFactory.AnalyzerType = analyzerType;
+                    resultsAnalyzerFactory.TypeConverterResultAnalyzer = AppKernel.Get<ConverterResultAnalyzerByDate>();
                     return resultsAnalyzerFactory;
                 }
             }

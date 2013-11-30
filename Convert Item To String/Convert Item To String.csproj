@@ -39,7 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converter Parameters\ConverterParametersDate.cs" />
+    <Compile Include="Converter Parameters\ConverterParametersIp.cs" />
+    <Compile Include="Converter\ConverterDate.cs" />
+    <Compile Include="Converter\ConverterIp.cs" />
+    <Compile Include="Converter\IConverter.cs" />
     <Compile Include="ConvertItemToString.cs" />
+    <Compile Include="Converter Parameters\IConverterParameters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
