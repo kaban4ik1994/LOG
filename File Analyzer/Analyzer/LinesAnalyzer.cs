@@ -8,27 +8,26 @@ using Journal_Record;
 
 namespace File_Analyzer.Analyzer
 {
-    class LinesAnalyzer : IFileAnaluzer<ResultLinesAnalyzer>
+    class LinesAnalyzer : IFileAnaluzer<ResultLinesAnalyzer,ParametersOfAnalyzerLine>
     {
 
-        public List<JournalRecord> RecordList { get; set; }
+        public List<JournalRecord> RecordList { private get; set; }
 
-        public ResultLinesAnalyzer Analyz(IParametersAnalyzer parameters)
+        public ResultLinesAnalyzer Analyz(ParametersOfAnalyzerLine parameters)
         {
 
-            var parameter = (ParametersOfAnalyzerLine)parameters;
             var result = new ResultLinesAnalyzer
             {
                 Result = new List<JournalRecord>()
             };
             if (!RecordList.Any()) return result;
-            for (var i = parameter.StartLine; i < parameter.StartLine + parameter.NumberLines; i++)
+            if (parameters.StartLine > RecordList.Count) parameters.StartLine = 0;
+            if (parameters.StartLine + parameters.NumberLines > RecordList.Count) parameters.NumberLines = 0;
+            for (var i = parameters.StartLine; i < parameters.StartLine + parameters.NumberLines; i++)
             {
                 result.Result.Add(RecordList.ElementAt(i));
             }
             return result;
         }
-
-
     }
 }

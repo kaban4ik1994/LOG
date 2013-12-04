@@ -14,13 +14,14 @@ namespace Analyzer
             var commands = CommandLine.Pars(line);
             if (!commands.TryGetValue("filepath", out filePath)) return;
             var logContent = new LogReader(filePath);
-            var fileAnalyzer = new FileAnalyzer();
-            
-            AnalyzerFactory.CommandLineParameters = commands;
-            AnalyzerFactory.RecordList = logContent.EventList.ToList();
+            var fileAnalyzer = new FileAnalyzer
+            {
+                Parameters = commands,
+                RecordList = logContent.EventList.ToList()
+            };
 
-                //  var grahp = new LibraryCreateGraph(1000, 1000);
-                Console.WriteLine(fileAnalyzer.Analyz(AnalyzerFactory.GetResultsAnalyzerFactory()));
+            //  var grahp = new LibraryCreateGraph(1000, 1000);
+                Console.WriteLine(fileAnalyzer.GetResultsAnalyzer());
             }
           
         }

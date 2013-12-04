@@ -55,6 +55,7 @@
             this.FileExtension = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StatusCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumberOfBytes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.getSum = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +76,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.getSum);
             this.groupBox1.Controls.Add(this.numberLines);
             this.groupBox1.Controls.Add(this.startLine);
             this.groupBox1.Controls.Add(this.label3);
@@ -193,20 +195,19 @@
             // reportDate
             // 
             this.reportDate.AutoSize = true;
-            this.reportDate.Location = new System.Drawing.Point(6, 19);
+            this.reportDate.Location = new System.Drawing.Point(203, 45);
             this.reportDate.Name = "reportDate";
             this.reportDate.Size = new System.Drawing.Size(81, 17);
             this.reportDate.TabIndex = 0;
             this.reportDate.TabStop = true;
             this.reportDate.Text = "Report date";
             this.reportDate.UseVisualStyleBackColor = true;
-            this.reportDate.CheckedChanged += new System.EventHandler(this.reportDate_CheckedChanged);
             // 
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(12, 537);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(779, 78);
+            this.richTextBox1.Size = new System.Drawing.Size(942, 78);
             this.richTextBox1.TabIndex = 3;
             this.richTextBox1.Text = "";
             // 
@@ -283,6 +284,17 @@
             this.NumberOfBytes.HeaderText = "Number Of Bytes";
             this.NumberOfBytes.Name = "NumberOfBytes";
             // 
+            // getSum
+            // 
+            this.getSum.AutoSize = true;
+            this.getSum.Location = new System.Drawing.Point(204, 69);
+            this.getSum.Name = "getSum";
+            this.getSum.Size = new System.Drawing.Size(92, 17);
+            this.getSum.TabIndex = 12;
+            this.getSum.TabStop = true;
+            this.getSum.Text = "Get sum bytes";
+            this.getSum.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,6 +343,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FileExtension;
         private System.Windows.Forms.DataGridViewTextBoxColumn StatusCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumberOfBytes;
+        private System.Windows.Forms.RadioButton getSum;
     }
 }
 

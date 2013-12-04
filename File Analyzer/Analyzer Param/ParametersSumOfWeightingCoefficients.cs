@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace File_Analyzer.Analyzer_Param
 {
-    public interface IParametersAnalyzer
+    class ParametersSumOfWeightingCoefficients
     {
-        
     }
 }

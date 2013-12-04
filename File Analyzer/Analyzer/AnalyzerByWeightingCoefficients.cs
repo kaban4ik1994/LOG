@@ -6,20 +6,19 @@ using Journal_Record;
 
 namespace File_Analyzer.Analyzer
 {
-    class AnalyzerByWeightingCoefficients : IFileAnaluzer<ResultAnalyzerByWeightingCoefficients>
+    class AnalyzerByWeightingCoefficients : IFileAnaluzer<ResultAnalyzerByWeightingCoefficients,ParametersAnalyzerByWeightingCoefficients>
     {
-        public List<JournalRecord> RecordList { get; set; }
+        public List<JournalRecord> RecordList { private get; set; }
 
-        public ResultAnalyzerByWeightingCoefficients Analyz(IParametersAnalyzer parameters)
+        public ResultAnalyzerByWeightingCoefficients Analyz(ParametersAnalyzerByWeightingCoefficients parameters)
         {
-            var parameter = (ParametersAnalyzerByWeightingCoefficients)parameters;
             double count = 0;
             foreach (var value in RecordList)
             {
-                if (value.Method == parameter.ValueName) count++;
-                if (value.FileExtension == parameter.ValueName) count++;
-                if (value.Protocol == parameter.ValueName) count++;
-                if (value.StatusCode == parameter.ValueName) count++;
+                if (value.Method == parameters.ValueName) count++;
+                if (value.FileExtension == parameters.ValueName) count++;
+                if (value.Protocol == parameters.ValueName) count++;
+                if (value.StatusCode == parameters.ValueName) count++;
             }
 
             return new ResultAnalyzerByWeightingCoefficients {Result = count/RecordList.Count};

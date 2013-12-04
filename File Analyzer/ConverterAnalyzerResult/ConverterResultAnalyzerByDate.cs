@@ -4,14 +4,13 @@ using File_Analyzer.Result_Analyzer;
 
 namespace File_Analyzer.ConverterAnalyzerResult
 {
-    class ConverterResultAnalyzerByDate : IConvertorAnalyzerResult<StringBuilder>
+    class ConverterResultAnalyzerByDate : IConvertorAnalyzerResult<StringBuilder,ResultAnalyzerByDate>
     {
-        public StringBuilder Convert(IResultAnalyzer resultAnalyzer)
+        public StringBuilder Convert(ResultAnalyzerByDate resultAnalyzer)
         {
-            var conversion = (ResultAnalyzerByDate)resultAnalyzer;
             var resultConvertor = new StringBuilder();
             var converter = new ConvertItemToString();
-            foreach (var result in conversion.Result)
+            foreach (var result in resultAnalyzer.Result)
             {
                 resultConvertor.AppendLine(converter.ConvertToString(result));
             }

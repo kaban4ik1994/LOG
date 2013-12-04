@@ -7,7 +7,7 @@ using Ninject;
 
 namespace File_Analyzer.Analyzer_Param
 {
-    class ParametersOfAnalyzerLine : IParametersAnalyzer
+    class ParametersOfAnalyzerLine
     {
 
         public int StartLine { get; set; }

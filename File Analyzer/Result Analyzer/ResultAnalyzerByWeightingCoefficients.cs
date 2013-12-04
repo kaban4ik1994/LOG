@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace File_Analyzer.Result_Analyzer
 {
-    class ResultAnalyzerByWeightingCoefficients : IResultAnalyzer
+    class ResultAnalyzerByWeightingCoefficients
     {
        public double Result { get; set; }
     }

@@ -42,31 +42,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Analyzer Param\ParametersAnalyzer.cs" />
     <Compile Include="Analyzer Param\ParametersAnalyzerByDate.cs" />
     <Compile Include="Analyzer Param\ParametersAnalyzerByIp.cs" />
     <Compile Include="Analyzer Param\ParametersAnalyzerByWeightingCoefficients.cs" />
     <Compile Include="Analyzer Param\ParametersOfAnalyzerLine.cs" />
-    <Compile Include="AnalyzerFactory.cs" />
+    <Compile Include="Analyzer Param\ParametersSumOfWeightingCoefficients.cs" />
     <Compile Include="AnalyzerNinjectModule.cs" />
     <Compile Include="Analyzer\AnalyzerByDate.cs" />
     <Compile Include="Analyzer\AnalyzerByIp.cs" />
     <Compile Include="Analyzer\AnalyzerByWeightingCoefficients.cs" />
+    <Compile Include="Analyzer\SumOfWeightingCoefficients.cs" />
     <Compile Include="ConverterAnalyzerResult\ConverterResultAnalyzerByDate.cs" />
     <Compile Include="ConverterAnalyzerResult\ConverterResultByIp.cs" />
     <Compile Include="ConverterAnalyzerResult\ConverterResultByWeightingCoefficients.cs" />
     <Compile Include="ConverterAnalyzerResult\ConverterResultLinesAnalyzer.cs" />
+    <Compile Include="ConverterAnalyzerResult\ConverterResultSumOfWeightingCoefficients.cs" />
     <Compile Include="ConverterAnalyzerResult\IConvrterAnalyzerResult.cs" />
     <Compile Include="FileAnalyzer.cs" />
     <Compile Include="Analyzer\IFileAnaluzer.cs" />
     <Compile Include="Analyzer\LinesAnalyzer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Result Analyzer\IResultAnalyzer.cs" />
     <Compile Include="Result Analyzer\ResultAnalyzerByDate.cs" />
     <Compile Include="Result Analyzer\ResultAnalyzerByIp.cs" />
     <Compile Include="Result Analyzer\ResultAnalyzerByWeightingCoefficients.cs" />
     <Compile Include="Result Analyzer\ResultLinesAnalyzer.cs" />
-    <Compile Include="ResultsAnalyzerFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Convert Item To String\Convert Item To String.csproj">

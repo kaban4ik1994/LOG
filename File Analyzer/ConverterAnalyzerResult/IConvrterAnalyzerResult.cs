@@ -2,8 +2,8 @@
 
 namespace File_Analyzer.ConverterAnalyzerResult
 {
-    public interface IConvertorAnalyzerResult<out T>
+    public interface IConvertorAnalyzerResult<out T, in TL>
     {
-        T Convert(IResultAnalyzer resultAnalyzer);
+        T Convert(TL resultAnalyzer);
     }
 }

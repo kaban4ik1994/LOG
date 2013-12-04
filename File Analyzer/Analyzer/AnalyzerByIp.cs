@@ -8,16 +8,16 @@ using Journal_Record;
 
 namespace File_Analyzer.Analyzer
 {
-    class AnalyzerByIp : IFileAnaluzer<ResultAnalyzerByIp>
+    class AnalyzerByIp : IFileAnaluzer<ResultAnalyzerByIp,ParametersAnalyzerByIp>
     {
-        public List<JournalRecord> RecordList { get; set; }
+        public List<JournalRecord> RecordList { private get; set; }
 
         private static bool ContainsIp(Ip.Ip ip, IEnumerable<Ip.Ip> ipList)
         {
             return ipList.Any(ip1 => ip1 == ip);
         }
 
-        public ResultAnalyzerByIp Analyz(IParametersAnalyzer parameters)
+        public ResultAnalyzerByIp Analyz(ParametersAnalyzerByIp parameters)
         {
             var result = new ResultAnalyzerByIp
             {

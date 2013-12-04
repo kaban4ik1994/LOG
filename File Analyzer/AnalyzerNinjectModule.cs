@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Convert_Item_To_String.Parameters_Converter;
+﻿using System.Text;
 using File_Analyzer.Analyzer;
 using File_Analyzer.Analyzer_Param;
 using File_Analyzer.ConverterAnalyzerResult;
@@ -15,33 +10,24 @@ namespace File_Analyzer
     class AnalyzerNinjectModule : NinjectModule
     {
 
-        public string Parameters { get; set; }
         public override void Load()
         {
-            if (Parameters == "LinesAnalyzer")
-            {
-                this.Bind<IFileAnaluzer<ResultLinesAnalyzer>>().To<LinesAnalyzer>();
-                this.Bind<IConvertorAnalyzerResult<StringBuilder>>().To<ConverterResultLinesAnalyzer>();
-            }
-            if (Parameters == "AnalyzerByWeightCoefficients")
-            {
-                this.Bind<IFileAnaluzer<ResultAnalyzerByWeightingCoefficients>>().To<AnalyzerByWeightingCoefficients>();
-                this.Bind<IConvertorAnalyzerResult<StringBuilder>>().To<ConverterResultByWeightingCoefficients>();
 
-            }
-            if (Parameters == "AnalyzerByIp")
-            {
+                Bind<IFileAnaluzer<ResultLinesAnalyzer,ParametersOfAnalyzerLine>>().To<LinesAnalyzer>();
+                Bind<IConvertorAnalyzerResult<StringBuilder,ResultLinesAnalyzer>>().To<ConverterResultLinesAnalyzer>();
+                Bind<IFileAnaluzer<ResultAnalyzerByWeightingCoefficients,ParametersAnalyzerByWeightingCoefficients>>().To<AnalyzerByWeightingCoefficients>();
+                Bind<IConvertorAnalyzerResult<StringBuilder,ResultAnalyzerByWeightingCoefficients>>().To<ConverterResultByWeightingCoefficients>();
+
                
-                this.Bind<IFileAnaluzer<ResultAnalyzerByIp>>().To<AnalyzerByIp>();
-                this.Bind<IConvertorAnalyzerResult<StringBuilder>>().To<ConverterResultByIp>();
-            }
-            if (Parameters == "AnalyzerByDate")
-            {
-                this.Bind<IFileAnaluzer<ResultAnalyzerByDate>>().To<AnalyzerByDate>();
-                this.Bind<IConvertorAnalyzerResult<StringBuilder>>().To<ConverterResultAnalyzerByDate>();
-                
-            }
-            
+                Bind<IFileAnaluzer<ResultAnalyzerByIp,ParametersAnalyzerByIp>>().To<AnalyzerByIp>();
+                Bind<IConvertorAnalyzerResult<StringBuilder,ResultAnalyzerByIp>>().To<ConverterResultByIp>();
+
+                Bind<IFileAnaluzer<ResultAnalyzerByDate,ParametersAnalyzerByDate>>().To<AnalyzerByDate>();
+                Bind<IConvertorAnalyzerResult<StringBuilder,ResultAnalyzerByDate>>().To<ConverterResultAnalyzerByDate>();
+
+            Bind<IFileAnaluzer<int, ParametersSumOfWeightingCoefficients>>().To<SumOfWeightingCoefficients>();
+            Bind<IConvertorAnalyzerResult<StringBuilder, int>>().To<ConverterResultSumOfWeightingCoefficients>();
+
 
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace File_Analyzer.Result_Analyzer
 {
-    class ResultAnalyzerByIp: IResultAnalyzer
+    class ResultAnalyzerByIp
     {
         public List<Ip.Ip> Result { get; set; }
     }
