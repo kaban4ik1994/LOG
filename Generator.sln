@@ -19,8 +19,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Yaml Reader", "Yaml Reader\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Journal Configuration", "Journal Configuration\Journal Configuration.csproj", "{A56D132F-00DA-40C4-B935-D10008713D4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library Create Graph", "Library Create Graph\Library Create Graph.csproj", "{B28416FE-C14B-4B45-8127-083FA715AB52}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Save To File", "SaveToFile\Save To File.csproj", "{69EB70FF-2747-46E2-8243-8D0CAA6C3035}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Convert Item To String", "Convert Item To String\Convert Item To String.csproj", "{71E090EF-5C98-4104-A1DD-BA0DD5074D0F}"
@@ -75,10 +73,6 @@ Global
 		{A56D132F-00DA-40C4-B935-D10008713D4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A56D132F-00DA-40C4-B935-D10008713D4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A56D132F-00DA-40C4-B935-D10008713D4F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B28416FE-C14B-4B45-8127-083FA715AB52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B28416FE-C14B-4B45-8127-083FA715AB52}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B28416FE-C14B-4B45-8127-083FA715AB52}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B28416FE-C14B-4B45-8127-083FA715AB52}.Release|Any CPU.Build.0 = Release|Any CPU
 		{69EB70FF-2747-46E2-8243-8D0CAA6C3035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{69EB70FF-2747-46E2-8243-8D0CAA6C3035}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69EB70FF-2747-46E2-8243-8D0CAA6C3035}.Release|Any CPU.ActiveCfg = Release|Any CPU

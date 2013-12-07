@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Convert_Item_To_String;
 using File_Analyzer.Analyzer_Param;
 using File_Analyzer.Result_Analyzer;
 using Journal_Record;

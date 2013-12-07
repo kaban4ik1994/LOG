@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using Convert_Item_To_String.Converter_Parameters;
 using Convert_Item_To_String.Parameters_Converter;
 

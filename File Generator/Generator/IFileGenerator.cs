@@ -1,9 +1,8 @@
-﻿using File_Generator.Generator_Param;
-
+﻿
 namespace File_Generator.Generator
 {
-    interface IFileGenerator<out T>
+    interface IFileGenerator<out T, in TL>
     {
-        T Generator(CreationOptionsValue parameters);
+        T Generator(TL parameters);
     }
 }

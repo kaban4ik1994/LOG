@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using File_Generator.Generator_Param;
+﻿using File_Generator.Generator_Param;
 
 namespace File_Generator.Generator
 {
-    class GeneratorFileExtension : IFileGenerator<string>
+    class GeneratorFileExtension : IFileGenerator<string, CreationOptionsFileExtension>
     {
 
-        public string Generator(CreationOptionsValue parameters)
+        public string Generator(CreationOptionsFileExtension parameters)
         {
-            var parameter = (CreationOptionsFileExtension)parameters;
-            return GeneratorRandomValue.GetRandomValue(parameter.FileExtension, parameter.Parameters.AvailableFileExtension);
+            return GeneratorRandomValue.GetRandomValue(parameters.FileExtension, parameters.Parameters.AvailableFileExtension);
         }
     }
 }

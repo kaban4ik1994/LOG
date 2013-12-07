@@ -5,7 +5,7 @@ using Convert_Item_To_String;
 using Journal_Record;
 namespace SaveToFile
 {
-    public class SaveToFile
+    public static class SaveToFile
     {
         public static void SaveToFileRecords(List<JournalRecord> records, string filePath)
         {

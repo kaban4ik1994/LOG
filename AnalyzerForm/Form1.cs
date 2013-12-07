@@ -35,6 +35,7 @@ namespace AnalyzerForm
             _logReader = new LogReader(filePath);
             var converterIp = new ConverterIp();
             var converterDate = new ConverterDate();
+            if(!_logReader.EventList.Any()) return;
             dataGridView1.RowCount = _logReader.EventList.Count();
             for (var i = 0; i < _logReader.EventList.Count(); i++)
             {
@@ -56,6 +57,7 @@ namespace AnalyzerForm
            
             startDate.Text = @"2009-12-29T12:54:59";
             endDate.Text = @"2009-12-29T12:54:59";
+
         }
 
 

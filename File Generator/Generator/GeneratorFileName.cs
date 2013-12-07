@@ -1,21 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using File_Generator.Generator_Param;
 
 namespace File_Generator.Generator
 {
-    class GeneratorFileName:IFileGenerator<string>
+    class GeneratorFileName:IFileGenerator<string, CreationOptionsFileName>
     {
-        public string Generator(CreationOptionsValue parameters)
+        public string Generator(CreationOptionsFileName parameters)
         {
-            var parameter = (CreationOptionsFileName) parameters;
             var result = string.Empty;
-            for (var i = parameter.MinLengthOfFileName; i < parameter.MaxLengthOfFileName; i++)
+            for (var i = parameters.MinLengthOfFileName; i < parameters.MaxLengthOfFileName; i++)
             {
-                result += Convert.ToChar(parameter.Random.Next(97, 122));
+                result += Convert.ToChar(parameters.Random.Next(97, 122));
             }
             return result;
         }

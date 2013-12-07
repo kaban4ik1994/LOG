@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using File_Generator.Generator_Param;
+﻿using File_Generator.Generator_Param;
 
 namespace File_Generator.Generator
 {
-    class GeneratorNumberOfBytes:IFileGenerator<int>
+    class GeneratorNumberOfBytes:IFileGenerator<int, CreationOptionsNumberOfBytes>
     {
-        public int Generator(CreationOptionsValue parameters)
+        public int Generator(CreationOptionsNumberOfBytes parameters)
         {
-            var parameter = (CreationOptionsNumberOfBytes) parameters;
-            return parameter.Random.Next(parameter.MinNumberOfBytes, parameter.MaxNumberOfBytes);
+            return parameters.Random.Next(parameters.MinNumberOfBytes, parameters.MaxNumberOfBytes);
         }
     }
 }

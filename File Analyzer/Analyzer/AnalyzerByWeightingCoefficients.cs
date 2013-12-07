@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using File_Analyzer.Analyzer_Param;
 using File_Analyzer.Result_Analyzer;
 using Journal_Record;

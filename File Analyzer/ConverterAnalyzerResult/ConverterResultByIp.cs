@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using File_Analyzer.Result_Analyzer;
 
 namespace File_Analyzer.ConverterAnalyzerResult
