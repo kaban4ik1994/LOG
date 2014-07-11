@@ -2,12 +2,13 @@
 
 namespace File_Generator.Generator
 {
-    class GeneratorStatusCode:IFileGenerator<string, CreationOptionsOfTheStatusCode>
+    class GeneratorStatusCode:IFileGenerator<string>
     {
-
-        public string Generator(CreationOptionsOfTheStatusCode parameters)
+        
+        public string Generator(CreationOptionsValue parameters)
         {
-            return GeneratorRandomValue.GetRandomValue(parameters.StatusCode, parameters.Parameters.AvailableStatusСodes);
+            var parameter = (CreationOptionsOfTheStatusCode)parameters;
+            return GeneratorRandomValue.GetRandomValue(parameter.StatusCode, parameter.Parameters.AvailableStatusСodes);
         }
     }
 }

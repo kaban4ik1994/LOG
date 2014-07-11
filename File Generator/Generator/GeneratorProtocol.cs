@@ -7,12 +7,13 @@ using File_Generator.Generator_Param;
 
 namespace File_Generator.Generator
 {
-    class GeneratorProtocol:IFileGenerator<string, CreationOptionsProtocol>
+    class GeneratorProtocol:IFileGenerator<string>
     {
-
-        public string Generator(CreationOptionsProtocol parameters)
+       
+        public string Generator(CreationOptionsValue parameters)
         {
-            return GeneratorRandomValue.GetRandomValue(parameters.Protocol, parameters.Parameters.AvailableProtocols);
+            var parameter = (CreationOptionsProtocol)parameters;
+            return GeneratorRandomValue.GetRandomValue(parameter.Protocol, parameter.Parameters.AvailableProtocols);
         }
     }
 }

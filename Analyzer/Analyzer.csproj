@@ -65,6 +65,10 @@
       <Project>{68a49ab7-b037-4caa-8bef-a8c2405bdf02}</Project>
       <Name>Journal Record</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Library Create Graph\Library Create Graph.csproj">
+      <Project>{b28416fe-c14b-4b45-8127-083fa715ab52}</Project>
+      <Name>Library Create Graph</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LOG\Log Reader.csproj">
       <Project>{e8105569-19bd-4728-80ff-0e71a492fdcd}</Project>
       <Name>Log Reader</Name>

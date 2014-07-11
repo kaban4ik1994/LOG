@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Journal_Record;
+using Ip = Ip.Ip;
 
 namespace LOG
 {
@@ -43,7 +44,7 @@ namespace LOG
                     (
                         new JournalRecord
                         {
-                            Ip = new Ip.Ip
+                            Ip = new global::Ip.Ip
                             {
                                 IpByte1 = Convert.ToByte(values.Groups[1].Value),
                                 IpByte2 = Convert.ToByte(values.Groups[2].Value),

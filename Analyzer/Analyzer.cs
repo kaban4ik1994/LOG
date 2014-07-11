@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using Command_Line;
 using File_Analyzer;
@@ -19,6 +20,7 @@ namespace Analyzer
                 RecordList = logContent.EventList.ToList()
             };
 
+            //  var grahp = new LibraryCreateGraph(1000, 1000);
                 Console.WriteLine(fileAnalyzer.GetResultsAnalyzer());
             }
           

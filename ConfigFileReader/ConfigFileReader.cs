@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Settings;
 using Yaml_Reader;
 
 namespace ConfigFileReader
 {
     public class ConfigFileReader
     {
-        public Settings.Settings Settings { get; private set; }
+        public Settings.Settings Settings { get; set; }
 
         public ConfigFileReader(string filePath)
         {

@@ -12,6 +12,8 @@ E:\программирование\курс3\объектно- ориентир
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\obj\Debug\Analyzer.pdb
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Journal Record.dll
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Journal Record.pdb
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Library Create Graph.dll
+E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Library Create Graph.pdb
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Convert Item To String.dll
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Convert Item To String.pdb
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\Analyzer\bin\Debug\Ip.dll

@@ -3,50 +3,46 @@ using System.Collections.Generic;
 using File_Generator.Generator;
 using File_Generator.Generator_Param;
 using Journal_Record;
-using Ninject;
 
 namespace File_Generator
 {
     public class FileGenerator
     {
 
-        public int MinNumberOfRepeatedIp { private get; set; }
+        public int MinNumberOfRepeatedIp { get; set; }
 
-        public int MaxNumberOfRepeatedIp { private get; set; }
+        public int MaxNumberOfRepeatedIp { get; set; }
 
         public int NumberOfUniqueIp { private get; set; }
 
-        public string[] Protocol { private get; set; }
+        public string[] Protocol { get; set; }
 
-        public string[] HttpMethods { private get; set; }
+        public string[] HttpMethods { get; set; }
 
-        public string[] StatusCodes { private get; set; }
+        public string[] StatusCodes { get; set; }
 
-        public string[] FileExtension { private get; set; }
+        public string[] FileExtension { get; set; }
 
-        public DateTime StartTime { private get; set; }
+        public DateTime StartTime { get; set; }
 
-        public int MinIntervalInMilliseconds { private get; set; }
+        public int MinIntervalInMilliseconds { get; set; }
 
-        public int MaxIntervalInMilliseconds { private get; set; }
+        public int MaxIntervalInMilliseconds { get; set; }
 
-        public int MinNumberOfBytes { private get; set; }
+        public int MinNumberOfBytes { get; set; }
 
-        public int MaxNumberOfBytes { private get; set; }
+        public int MaxNumberOfBytes { get; set; }
 
-        public Settings.Settings Parameters { private get; set; }
+        public Settings.Settings Parameters { get; set; }
 
-        public int MinLengthOfFileName { private get; set; }
+        public int MinLengthOfFileName { get; set; }
 
-        public int MaxLengthOfFileName { private get; set; }
-
-        private IKernel _appKernel;
+        public int MaxLengthOfFileName { get; set; }
 
         public List<JournalRecord> CreateLogRecords(int numberLines)
         {
             var logRecords = new List<JournalRecord>();
-            _appKernel = new StandardKernel(new GeneratorNinjectModule());
-            var creationOptionsIp = new CreationOptionsIp
+            CreationOptionsValue creationOptionsIp = new CreationOptionsIp
             {
                 NumberOfUniqueIp = NumberOfUniqueIp,
                 MinNumberOfRepeatedIp = MinNumberOfRepeatedIp,
@@ -54,57 +50,57 @@ namespace File_Generator
                 Count = numberLines
             };
 
-            var dateOfCreationOptions = new DateOfCreationOptions
+            CreationOptionsValue dateOfCreationOptions = new DateOfCreationOptions
             {
                 StartTime = DateTime.Now,
                 MinIntervalInMilliseconds = MinIntervalInMilliseconds,
                 MaxIntervalInMilliseconds = MaxIntervalInMilliseconds
             };
 
-            var creationOptionsOfTheMethod = new CreationOptionsOfTheMethod
+            CreationOptionsValue creationOptionsOfTheMethod = new CreationOptionsOfTheMethod
             {
                 Parameters = Parameters,
                 Method = HttpMethods
             };
 
-            var creationOptionsProtocol = new CreationOptionsProtocol
+            CreationOptionsValue creationOptionsProtocol = new CreationOptionsProtocol
             {
                 Parameters = Parameters,
                 Protocol = Protocol
             };
 
-            var creationOptionsFileName = new CreationOptionsFileName
+            CreationOptionsValue creationOptionsFileName = new CreationOptionsFileName
             {
                 MinLengthOfFileName = MinLengthOfFileName,
                 MaxLengthOfFileName = MaxLengthOfFileName
             };
 
-            var creationOptionsFileExtension = new CreationOptionsFileExtension
+            CreationOptionsValue creationOptionsFileExtension = new CreationOptionsFileExtension
             {
                 Parameters = Parameters,
                 FileExtension = FileExtension
             };
 
-            var creationOptionsOfTheStatusCode = new CreationOptionsOfTheStatusCode
+            CreationOptionsValue creationOptionsOfTheStatusCode = new CreationOptionsOfTheStatusCode
             {
                 Parameters = Parameters,
                 StatusCode = StatusCodes
             };
 
-            var creationOptionsNumberOfBytes = new CreationOptionsNumberOfBytes
+            CreationOptionsValue creationOptionsNumberOfBytes = new CreationOptionsNumberOfBytes
             {
                 MinNumberOfBytes = MinNumberOfBytes,
                 MaxNumberOfBytes = MaxNumberOfBytes
             };
 
-            var generatorIp = _appKernel.Get<GeneratorIp>();
-            var generatorDate = _appKernel.Get<GeneratorDate>();
-            var generatorMethod = _appKernel.Get<GeneratorMethod>();
-            var generatorProtocol = _appKernel.Get<GeneratorProtocol>();
-            var generatorFileName = _appKernel.Get<GeneratorFileName>();
-            var generatorFileExtension = _appKernel.Get<GeneratorFileExtension>();
-            var generatorStatusCodes = _appKernel.Get<GeneratorStatusCode>();
-            var generatorNumberOfBytes = _appKernel.Get<GeneratorNumberOfBytes>();
+            IFileGenerator<Ip.Ip> generatorIp = new GeneratorIp();
+            IFileGenerator<DateTime> generatorDate = new GeneratorDate();
+            IFileGenerator<string> generatorMethod = new GeneratorMethod();
+            IFileGenerator<string> generatorProtocol = new GeneratorProtocol();
+            IFileGenerator<string> generatorFileName = new GeneratorFileName();
+            IFileGenerator<string> generatorFileExtension = new GeneratorFileExtension();
+            IFileGenerator<string> generatorStatusCodes = new GeneratorStatusCode();
+            IFileGenerator<int> generatorNumberOfBytes = new GeneratorNumberOfBytes();
 
 
             for (var i = 0; i < numberLines; i++)

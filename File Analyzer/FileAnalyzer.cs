@@ -19,87 +19,90 @@ namespace File_Analyzer
 
         public  StringBuilder GetResultsAnalyzer()
         {
-            if (Parameters == null || RecordList == null) return null;
-            string typeAnalyzer;
-            Parameters.TryGetValue("report", out typeAnalyzer);
+            if (Parameters != null && RecordList != null)
+            {
+                string typeAnalyzer;
+                Parameters.TryGetValue("report", out typeAnalyzer);
 
-            _appKernel = new StandardKernel(new AnalyzerNinjectModule());
+                _appKernel = new StandardKernel(new AnalyzerNinjectModule());
    
-            string startTime;
-            string endTime;
-            Parameters.TryGetValue("startDate", out startTime);
-            Parameters.TryGetValue("endDate", out endTime);
-            DateTime tempDate;
-            var parameters = new ParametersAnalyzerByDate
-            {
-                EndDate = DateTime.TryParse(endTime, out tempDate) ? tempDate : new DateTime(),
-                StartDate = DateTime.TryParse(startTime, out tempDate) ? tempDate : new DateTime()
-            };
-            var selectionbByDate = _appKernel.Get<AnalyzerByDate>();
-            selectionbByDate.RecordList = RecordList;
-            RecordList = selectionbByDate.Analyz(parameters).Result;
+                    string startTime;
+                    string endTime;
+                    Parameters.TryGetValue("startDate", out startTime);
+                    Parameters.TryGetValue("endDate", out endTime);
+                    DateTime tempDate;
+                    var parameters = new ParametersAnalyzerByDate
+                    {
+                        EndDate = DateTime.TryParse(endTime, out tempDate) ? tempDate : new DateTime(),
+                        StartDate = DateTime.TryParse(startTime, out tempDate) ? tempDate : new DateTime()
+                    };
+                    var selectionbByDate = _appKernel.Get<AnalyzerByDate>();
+                    selectionbByDate.RecordList = RecordList;
+                    RecordList = selectionbByDate.Analyz(parameters).Result;
 
-            if (typeAnalyzer == "AnalyzerByDate")
-            {
-                var typeConverter = _appKernel.Get<ConverterResultAnalyzerByDate>();
-                return typeConverter.Convert(selectionbByDate.Analyz(parameters));
-            }
+                if (typeAnalyzer == "AnalyzerByDate")
+                {
+                    var typeConverter = _appKernel.Get<ConverterResultAnalyzerByDate>();
+                    return typeConverter.Convert(selectionbByDate.Analyz(parameters));
+                }
  
 
-            if (typeAnalyzer == "LinesAnalyzer")
-            {
-                string numberLines;
-                string startLine;
-                int tempValue;
-                Parameters.TryGetValue("numberLine", out numberLines);
-                Parameters.TryGetValue("startLine", out startLine);
-                var typeParameterAnalyzer = new ParametersOfAnalyzerLine
+                if (typeAnalyzer == "LinesAnalyzer")
                 {
-                    NumberLines = int.TryParse(numberLines, out tempValue) ? tempValue : 0,
-                    StartLine = int.TryParse(startLine, out tempValue) ? tempValue : 0
-                };
-                var analyzerType = _appKernel.Get<LinesAnalyzer>();
-                analyzerType.RecordList = RecordList;
-                var typeConverter = _appKernel.Get<ConverterResultLinesAnalyzer>();
+                    string numberLines;
+                    string startLine;
+                    int tempValue;
+                    Parameters.TryGetValue("numberLine", out numberLines);
+                    Parameters.TryGetValue("startLine", out startLine);
+                    var typeParameterAnalyzer = new ParametersOfAnalyzerLine
+                    {
+                        NumberLines = int.TryParse(numberLines, out tempValue) ? tempValue : 0,
+                        StartLine = int.TryParse(startLine, out tempValue) ? tempValue : 0
+                    };
+                    var analyzerType = _appKernel.Get<LinesAnalyzer>();
+                    analyzerType.RecordList = RecordList;
+                    var typeConverter = _appKernel.Get<ConverterResultLinesAnalyzer>();
 
-                return typeConverter.Convert(analyzerType.Analyz(typeParameterAnalyzer));
-            }
+                    return typeConverter.Convert(analyzerType.Analyz(typeParameterAnalyzer));
+                }
 
-            if (typeAnalyzer == "AnalyzerByWeightCoefficients")
-            {
-                string value;
-                Parameters.TryGetValue("Value", out value);
-                var typeParameterAnalyzer = new ParametersAnalyzerByWeightingCoefficients
+                if (typeAnalyzer == "AnalyzerByWeightCoefficients")
                 {
-                    ValueName = value
-                };
+                    string value;
+                    Parameters.TryGetValue("Value", out value);
+                    var typeParameterAnalyzer = new ParametersAnalyzerByWeightingCoefficients
+                    {
+                        ValueName = value
+                    };
 
-                var analyzerType = _appKernel.Get<AnalyzerByWeightingCoefficients>();
-                analyzerType.RecordList = RecordList;
+                    var analyzerType = _appKernel.Get<AnalyzerByWeightingCoefficients>();
+                    analyzerType.RecordList = RecordList;
 
-                var typeConverter = _appKernel.Get<ConverterResultByWeightingCoefficients>();
+                    var typeConverter = _appKernel.Get<ConverterResultByWeightingCoefficients>();
 
-                return typeConverter.Convert(analyzerType.Analyz(typeParameterAnalyzer));
-            }
+                    return typeConverter.Convert(analyzerType.Analyz(typeParameterAnalyzer));
+                }
 
-            if (typeAnalyzer == "AnalyzerByIp")
-            {
-                var typeParameterAnalyzer = new ParametersAnalyzerByIp();
-                var analyzerType = _appKernel.Get<AnalyzerByIp>();
-                analyzerType.RecordList = RecordList;
-                var typeConverter = _appKernel.Get<ConverterResultByIp>();
+                if (typeAnalyzer == "AnalyzerByIp")
+                {
+                    var typeParameterAnalyzer = new ParametersAnalyzerByIp();
+                    var analyzerType = _appKernel.Get<AnalyzerByIp>();
+                    analyzerType.RecordList = RecordList;
+                    var typeConverter = _appKernel.Get<ConverterResultByIp>();
 
-                return typeConverter.Convert(analyzerType.Analyz(typeParameterAnalyzer));
-            }
+                    return typeConverter.Convert(analyzerType.Analyz(typeParameterAnalyzer));
+                }
 
-            if (typeAnalyzer == "SumOfWeightingCoefficients")
-            {
-                var typeParameterAnalyzer = new ParametersSumOfWeightingCoefficients();
-                var analyzerType = _appKernel.Get<SumOfWeightingCoefficients>();
-                analyzerType.RecordList = RecordList;
-                var typeConverter = _appKernel.Get<ConverterResultSumOfWeightingCoefficients>();
-                return typeConverter.Convert(analyzerType.Analyz(typeParameterAnalyzer));
+                if (typeAnalyzer == "SumOfWeightingCoefficients")
+                {
+                    var typeParameterAnalyzer = new ParametersSumOfWeightingCoefficients();
+                    var analyzerType = _appKernel.Get<SumOfWeightingCoefficients>();
+                    analyzerType.RecordList = RecordList;
+                    var typeConverter = _appKernel.Get<ConverterResultSumOfWeightingCoefficients>();
+                    return typeConverter.Convert(analyzerType.Analyz(typeParameterAnalyzer));
 
+                }
+               
             }
             return null;
 

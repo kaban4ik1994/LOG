@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+using System.Linq;
 using File_Generator;
 using Command_Line;
 namespace Generator

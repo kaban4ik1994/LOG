@@ -7,12 +7,13 @@ using File_Generator.Generator_Param;
 
 namespace File_Generator.Generator
 {
-    class GeneratorMethod:IFileGenerator<string, CreationOptionsOfTheMethod>
+    class GeneratorMethod:IFileGenerator<string>
     {
        
-        public string Generator(CreationOptionsOfTheMethod parameters)
+        public string Generator(CreationOptionsValue parameters)
         {
-            return GeneratorRandomValue.GetRandomValue(parameters.Method, parameters.Parameters.AvailableMethods);
+            var parameter = (CreationOptionsOfTheMethod) parameters;
+            return GeneratorRandomValue.GetRandomValue(parameter.Method, parameter.Parameters.AvailableMethods);
         }
     }
 }

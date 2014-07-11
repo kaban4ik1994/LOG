@@ -30,9 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Ninject">
-      <HintPath>..\Ninject-3.0.0.15-release-net-4.5\Ninject.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,7 +49,6 @@
     <Compile Include="Generator Param\CreationOptionsOfTheMethod.cs" />
     <Compile Include="Generator Param\CreationOptionsOfTheStatusCode.cs" />
     <Compile Include="Generator Param\CreationOptionsValue.cs" />
-    <Compile Include="GeneratorNinjectModule.cs" />
     <Compile Include="Generator\GeneratorDate.cs" />
     <Compile Include="Generator\GeneratorFileExtension.cs" />
     <Compile Include="Generator\GeneratorFileName.cs" />

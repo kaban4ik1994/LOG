@@ -9,6 +9,3 @@ E:\программирование\курс3\объектно- ориентир
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\File Generator\bin\Debug\Settings.pdb
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\File Generator\bin\Debug\Ip.dll
 E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\File Generator\bin\Debug\Ip.pdb
-E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\File Generator\bin\Debug\Ninject.dll
-E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\File Generator\bin\Debug\Ninject.pdb
-E:\программирование\курс3\объектно- ориентированное программирование\log files\Generator\File Generator\bin\Debug\Ninject.xml
